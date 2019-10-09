@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"><%= link_to 'Главная', root_url, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to 'Создать задачу', create_task_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to 'Отправка СМС', send_sms_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "Учет SIM-карточек", sim_cards_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to "Парсинг", parsing_path, class: "nav-link" %></li>
+      <li class="nav-item"><%= link_to 'База номеров', database_numbers_path, class: "nav-link" %></li>
+    </ul>
+  </div>
+</nav>

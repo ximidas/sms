@@ -1,0 +1,113 @@
+<%= render 'layouts/header' %>
+
+<div class="container">
+  <div class="text-center">
+    <%= form_with url: start_send_sms_path do |f| %>
+    <h1>Отправка СМС</h1>
+    <div class="form-group">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <%= label_tag(:task_id, "Выбрать заявку", class: "input-group-text") %>
+        </div>
+            <% if @tasks.nil? %>
+              <select disabled class="custom-select">
+              <option selected> Нет открытых задач </option>
+              </select>
+              <% else %>
+            <% @tasks.sort.each do |task| %>
+            <select name="task_id" id="task_id" class="custom-select">
+              <option value="<%= task %>"> <%= task %> </option>
+            </select>
+            <% end %>
+            <% end %>
+
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag(:sms_quantity, "Кол-во SMS на отправку") %>
+      <%= f.text_field(:sms_quantity, class: 'form-control') %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag(:sim_card_id, "Выбрать сим-карту") %>
+      <% if @sim_cards.nil? %>
+        <select class="form-control" disabled>
+          <option>Нет сим-карт</option>
+        </select>
+      <% else %>
+        <select name="sim_card_id" id="sim_card_id" class="form-control">
+          <% @sim_cards.each do |sim_card| %>
+            <option value="<%= sim_card.id %>"> <%= sim_card.number %> (Осталось: <%= sim_card.sms_available %> sms, Оператор: <%= sim_card.operator %>)</option>
+            </select>
+
+          <% end %>
+
+      <% end %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag(:sms_text, "Текст СМС (только латиницей)") %>
+      <%= f.text_area(:sms_text, cols: 20, rows: 3, class: 'form-control') %>
+    </div>
+
+      <%= f.submit "Отправить", class: "btn btn-dark btn-lg" %>
+        <% end %>
+    <br>
+    <% unless notice.nil? %>
+      <div class="alert alert-dark" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
+<br><br>
+  <div class="text-center">
+    <h1>Заявки</h1>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#ID Заявки</th>
+        <th scope="col">Клиент</th>
+        <th scope="col">Кол-во отправленых</th>
+        <th scope="col">Статус</th>
+        <th scope="col">Просмотр</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+     <% @all_tasks.select(:task_id, :client_id).distinct(:task_id).each do |task| %>
+      <tr>
+        <th scope="row"><%= task.task_id %></th>
+        <td><%= Client.where(id: task.client_id).pluck(:name).first %></td>
+        <td><%= @all_tasks.where(task_id: task.task_id).where(status: 1).count %> из <%= @all_tasks.where(task_id: task.task_id).count %></td>
+        <td><%= @all_tasks.where(task_id: task.task_id).where(status: 1).count === @all_tasks.where(task_id: task.task_id).count ? 'Закрыто' : 'Открыто'  %></td>
+        <td><%= link_to 'Открыть', task_view_path(task_id: task.task_id), class: "btn btn-dark btn-sm" %></td>
+      </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="text-center">
+    <h1>Клиенты</h1>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Клиент</th>
+        <th scope="col">Кол-во заявок</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @clients.each do |client| %>
+      <tr>
+        <th><%= client.name %></th>
+        <td><%= @all_tasks.where(client_id: client.id).distinct.pluck(:task_id).count %></td>
+      </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+

@@ -1,0 +1,20 @@
+<%= render 'layouts/header' %>
+
+<div class="container">
+  <h3>Номер: <%= SimCard.where(id: @deposits.first.sim_card_id).pluck(:number).first  %> </h3>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Сумма</th>
+      <th scope="col">Дата пополнения</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @deposits.each do |deposit| %><tr>
+      <th scope="row"><%= deposit.summ %></th>
+      <td><%= deposit.created_at %></td>
+    </tr><% end %>
+    </tbody>
+  </table>
+
+</div>

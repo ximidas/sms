@@ -1,0 +1,60 @@
+<%= render 'layouts/header' %>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+        $('#table_format').DataTable( {
+            aLengthMenu: [
+                [10, 50, 100, 200, 500, 1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 500000, 1000000, -1],
+                [10, 50, 100, 200, 500, 1000, 2000, 3000, 4000, 5000, 10000, 20000, 30000, 40000, 50000, 100000, 500000, 1000000, "All"]
+            ],
+            "columnDefs": [ {
+                "targets": [0],
+                "orderable": false,
+            } ]
+        } );
+    } );
+</script>
+
+<div class="container">
+  <div class="text-center">
+    <h1>База данных</h1>
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#databaseShow" role="button" aria-expanded="false" aria-controls="databaseShow">
+      Показать
+    </a>
+    <div class="collapse" id="databaseShow">
+    <table id="table_format"
+           class="table table-bordered table-striped">
+
+      <thead>
+      <tr>
+        <th class="option-phone">Телефоны</th>
+        <th>Категория</th>
+        <th>Регион</th>
+        <th>Страна</th>
+        <th>Сайт</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @numbers.each do |number| %>
+        <tr>
+          <td>+<%= number.phone %></td>
+          <td><%= number.category %></td>
+          <td><%= number.region %></td>
+          <td><%= number.country %></td>
+          <td><%= number.site %></td>
+        </tr>
+      <% end %>
+
+
+
+      </tbody>
+    </table>
+    </div>
+  </div>
+
+  </form>
+</div>
+
+
+

@@ -1,0 +1,113 @@
+<%= render 'layouts/header' %>
+
+<div class="container">
+
+  <div class="text-center">
+
+    <div class="row">
+      <div class="col-md-6">
+        <h4>
+          Добавить сим-карту
+        </h4>
+
+        <%= form_with(model: @sim_card, url: add_sim_card_path) do |f| %>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <%= label_tag(:number, "Номер сим-карты") %>
+              <%= f.text_field(:number, class: 'form-control') %>
+            </div>
+            <div class="form-group col-md-6">
+              <%= label_tag(:operator, "Оператор") %>
+              <%= f.text_field(:operator, class: 'form-control') %>
+            </div>
+            <div class="form-group col-md-6">
+              <%= label_tag(:price, "Стоимость") %>
+              <%= f.text_field(:price, class: 'form-control') %>
+            </div>
+            <div class="form-group col-md-6">
+              <%= label_tag(:sms_available, "Доступно смс") %>
+              <%= f.text_field(:sms_available, class: 'form-control') %>
+            </div>
+          </div>
+          <%= submit_tag "Добавить", class: "btn btn-dark" %>
+       <% end %>
+
+      </div>
+      <div class="col-md-6">
+        <h4>
+          Пополнить сим-карту
+        </h4>
+        <%= form_with(model: @add_funds, url: add_funds_path) do |f| %>
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <%= label_tag(:sim_card_id, "Выбрать сим-карту") %>
+              <% if @sim_cards.nil? %>
+                <select class="form-control" disabled>
+                  <option>Нет сим-карт</option>
+                </select>
+          <% else %>
+                <select name="sim_card_id" id="sim_card_id" class="form-control">
+                  <% @sim_cards.each do |sim_card| %>
+                    <option value="<%= sim_card.id %>"> <%= sim_card.number %> (Осталось: <%= sim_card.sms_available %> sms, Оператор: <%= sim_card.operator %>)</option>
+                    </select>
+
+                  <% end %>
+
+                <% end %>
+            </div>
+            <div class="form-group col-md-6">
+              <%= label_tag(:summ, "Сумма пополнения") %>
+              <%= f.text_field(:summ, class: 'form-control') %>
+            </div>
+            <div class="form-group col-md-6">
+              <%= label_tag(:sms_quantity, "Кол-во смс") %>
+              <%= f.text_field(:sms_quantity, class: 'form-control') %>
+            </div>
+          </div>
+          <%= submit_tag "Пополнить", class: "btn btn-dark" %>
+        <% end %>
+
+      </div>
+
+      <br>
+      <% unless notice.nil? %>
+        <div class="alert alert-dark" role="alert">
+          <%= notice %>
+        </div>
+      <% end %>
+    </div>
+
+
+
+
+    <h2>Учет сим-карт</h2>
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">Номер карты</th>
+        <th scope="col">Общее кол-во отправленных смс</th>
+        <th scope="col">Кол-во смс в текущем месяце</th>
+        <th scope="col">Цена покупки</th>
+        <th scope="col">Сумма пополнений</th>
+        <th scope="col">Дата добавления</th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @sim_cards.each do |sim_card| %>
+      <tr>
+        <th scope="row"><%= sim_card.number %></th>
+        <td>считать из тасков</td>
+        <td>считать из тасков</td>
+        <td><%= sim_card.price.to_i %> лей</td>
+        <td>
+          <%= sim_card.sim_card_funds.sum(:summ).to_i %> лей
+          <%= link_to 'посмотреть', view_deposit_history_path(id: sim_card.id), class: "btn btn-outline-dark btn-sm" %>
+        </td>
+        <td><%= sim_card.created_at %></td>
+      </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+</div>

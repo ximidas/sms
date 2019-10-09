@@ -1,0 +1,28 @@
+<%= render 'layouts/header' %>
+<div class="container">
+  <div class="text-center">
+    <h3>Детализация</h3>
+<p>ID задачи: <%= @tasks.first.task_id %></p>
+<p>Клиент: <%= Client.where(id: @tasks.first.client_id).pluck(:name).first %></p>
+  </div>
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Телефон</th>
+    <th scope="col">Регион</th>
+    <th scope="col">Статус</th>
+    <th scope="col">Отправлено с сим-карты</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @tasks.each do |task| %>
+  <tr>
+    <th scope="row"><%= task.phone %></th>
+    <td><%= task.region %></td>
+    <td><%= task.status == 1 ? 'Отправлено' : 'Не отправлено' %></td>
+    <td><%= SimCard.where(id: task.sim_card_id).pluck(:number).first %></td>
+  </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
