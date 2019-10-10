@@ -3,36 +3,7 @@ class Parser999mdController < ApplicationController
   require 'open-uri'
   OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
 
-  def all
-    bicycles
-    cars_passengers
-    parts_for_cars
-    parts_for_trucks
-    wheel_and_tires
-    trailers
-    buses_and_minibuses
-    trucks
-    motorcycles
-    moto_equipment
-    agriculture
-    gps_navigation
-    supplies_of_car_audio
-    special_equipment
-    acoustic
-    video_recorders
-    radars_alarms
-    carcaraudio
-    snowmobiles_and_jet_ski
-    airplanes
-    electric_scooters
-    current_business
-    sites_and_developing
-    appartaments_and_rooms
-    houses_and_garden
-    mobile_phones
-    woman_clothes
-    woman_shoes
-  end
+  ### TRANSPORT
 
   def cars_passengers
     parser('https://91.220.207.88/ru/list/transport/cars?page=', 'Транспорт / Легковые авто', 700)
@@ -40,6 +11,18 @@ class Parser999mdController < ApplicationController
 
   def parts_for_cars
     parser('https://91.220.207.88/ru/list/transport/spare-parts-for-cars?page=', 'Транспорт / Запчасти и разборка легковых автомобилей', 434)
+  end
+
+  def supplies_and_accessories
+    parser('https://91.220.207.88/ru/list/transport/supplies-and-accessories?page=', 'Транспорт / Расходные материалы и комплектующие', 68)
+  end
+
+  def special_equipment_and_tools
+    parser('https://91.220.207.88/ru/list/transport/special-equipment-and-tools?page=', 'Транспорт / Инструменты и спецоборудование', 25)
+  end
+
+  def auto_glass_and_optics
+    parser('https://91.220.207.88/ru/list/transport/auto-glass-and-optics?page=', 'Транспорт / Автостекла и автооптика', 34)
   end
 
   def parts_for_trucks
@@ -72,6 +55,10 @@ class Parser999mdController < ApplicationController
 
   def moto_equipment
     parser('https://91.220.207.88/ru/list/transport/moto-equipment?page=', 'Транспорт / Мотоэкипировка', 5)
+  end
+
+  def spare_parts_for_motorcycles
+    parser('https://91.220.207.88/ru/list/transport/spare-parts-for-motorcycles?page=', 'Транспорт / Запчасти для мототехники', 5)
   end
 
   def electric_scooters
@@ -119,6 +106,36 @@ class Parser999mdController < ApplicationController
     parser('https://91.220.207.88/ru/list/transport/bicycles?page=', 'Транспорт / Велотранспорт', 44)
   end
 
+  def bike_gear
+    parser('https://91.220.207.88/ru/list/transport/bike-gear?page=', 'Транспорт / Велоаксессуары', 6)
+  end
+
+  def spare_parts_for_bicycles
+    parser('https://91.220.207.88/ru/list/transport/spare-parts-for-bicycles?page=', 'Транспорт / Велозапчасти и сервис', 6)
+  end
+
+  def cargo
+    parser('https://91.220.207.88/ru/list/transport/cargo?page=', 'Транспорт / Грузоперевозки', 172)
+  end
+
+  def auto_service
+    parser('https://91.220.207.88/ru/list/transport/car-2?page=', 'Транспорт / Автосервис и мотосервис', 94)
+  end
+
+  def rent_a_car
+    parser('https://91.220.207.88/ru/list/transport/rent-a-car?page=', 'Транспорт / Аренда авто', 51)
+  end
+
+  def passenger
+    parser('https://91.220.207.88/ru/list/transport/passenger?page=', 'Транспорт / Пассажироперевозки', 77)
+  end
+
+  def transport_miscellaneous
+    parser('https://91.220.207.88/ru/list/transport/miscellaneous?page=', 'Транспорт / Разное', 10)
+  end
+
+  ## BUSINESS
+
   def current_business
     parser('https://91.220.207.88/ru/list/business/the-current-business?page=', 'Бизнес / Действующий бизнес', 16)
   end
@@ -126,6 +143,9 @@ class Parser999mdController < ApplicationController
   def sites_and_developing
     parser('https://91.220.207.88/ru/list/business/dev-support-sites?page=', 'Сайты и разработка', 13)
   end
+
+
+  ### REAL ESTATE
 
   def appartaments_and_rooms
     parser('https://91.220.207.88/ru/list/real-estate/apartments-and-rooms?page=', 'Недвижимость / Квартиры и комнаты', 429)
@@ -135,9 +155,73 @@ class Parser999mdController < ApplicationController
     parser('https://91.220.207.88/ru/list/real-estate/house-and-garden?page=', 'Недвижимость / Дома и дачи', 137)
   end
 
+  def lands
+    parser('https://91.220.207.88/ru/list/real-estate/land?page=', 'Недвижимость / Земельные участки', 77)
+  end
+
+  def commercial_real_estate
+    parser('https://91.220.207.88//ru/list/real-estate/commercial-real-estate?page=', 'Недвижимость / Коммерческая недвижимость', 79)
+  end
+
+  def garages_and_parking
+    parser('https://91.220.207.88//ru/list/real-estate/garages-and-parking?page=', 'Недвижимость / Гаражи и парковки', 15)
+  end
+
+  def real_estate_miscellaneous
+    parser('https://91.220.207.88//ru/list/real-estate/miscellaneous?page=', 'Недвижимость / Разное', 3)
+  end
+
+  def real_estate_services
+    parser('https://91.220.207.88//ru/list/real-estate/services?page=', 'Недвижимость / Риэлторские услуги', 3)
+  end
+
+  ### PHONES
+
   def mobile_phones
     parser('https://91.220.207.88/ru/list/phone-and-communication/mobile-phones?page=', 'Телефоны и связь / Мобильные телефоны', 247)
   end
+
+  def mobile_phones_accessories
+    parser('https://91.220.207.88/ru/list/phone-and-communication/accessories?page=', 'Телефоны и связь / Аксессуары', 54)
+  end
+
+  def mobile_phones_parts
+    parser('https://91.220.207.88/ru/list/phone-and-communication/spare-parts-for-mobile-phones?page=', 'Телефоны и связь / Запчасти для телефонов', 12)
+  end
+
+  def mobile_numbers
+    parser('https://91.220.207.88/ru/list/phone-and-communication/rooms-and-tickets?page=', 'Телефоны и связь / Номера и абонементы', 3)
+  end
+
+  def mobile_service
+    parser('https://91.220.207.88/ru/list/phone-and-communication/service-and-repair-of-telephones?page=', 'Телефоны и связь / Сервис и ремонт телефонов', 48)
+  end
+
+  def home_phones
+    parser('https://91.220.207.88/ru/list/phone-and-communication/cordless-phones?page=', 'Телефоны и связь / Стационарные телефоны', 6)
+  end
+
+  def radio
+    parser('https://91.220.207.88/ru/list/phone-and-communication/radio?page=', 'Телефоны и связь / Рации и радиостанции', 3)
+  end
+
+  def pbx
+    parser('https://91.220.207.88/ru/list/phone-and-communication/office-pbx?page=', 'Телефоны и связь / Офисные АТС', 2)
+  end
+
+  def fax
+    parser('https://91.220.207.88/ru/list/phone-and-communication/fax?page=', 'Телефоны и связь / Факсы', 2)
+  end
+
+  def mobile_chargers
+    parser('https://91.220.207.88/ru/list/phone-and-communication/charger-and-batteries?page=', 'Телефоны и связь / Зарядки и аккумуляторы', 11)
+  end
+
+  def phones_miscellaneous
+    parser('https://91.220.207.88/ru/list/phone-and-communication/miscellaneous?page=', 'Телефоны и связь / Разное', 2)
+  end
+
+  ### CLOTHES
 
   def woman_clothes
     parser('https://91.220.207.88/ru/list/clothes-and-shoes/clothes-for-women?page=', 'Одежда, обувь и аксессуары / Женская одежда', 110)

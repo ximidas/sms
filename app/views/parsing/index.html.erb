@@ -34,157 +34,378 @@
     <p>Всего с данного сайта: <%= @numbers_999 %></p>
   </div>
   <div class="text-center">
-  <table class="table table-bordered table-dark">
-    <thead>
-    <tr>
-      <th scope="col">Категория</th>
-      <th scope="col">Номеров в базе</th>
-      <th scope="col">Действие</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <th scope="row">Бизнес / Действующий бизнес</th>
-      <td><%= @current_business_999 %></td>
-      <td><%= link_to "Парсинг", current_business_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Бизнес / Сайты и разработка</th>
-      <td><%= @sites_and_developing_999 %></td>
-      <td><%= link_to "Парсинг", sites_and_developing_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Недвижимость / Дома и дачи</th>
-      <td><%= @houses_and_garden_999 %></td>
-      <td><%= link_to "Парсинг", houses_and_garden_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Недвижимость / Квартиры и комнаты</th>
-      <td><%= @appartaments_and_rooms_999 %></td>
-      <td><%= link_to "Парсинг", appartaments_and_rooms_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Одежда, обувь и аксессуары / Женская одежда</th>
-      <td><%= @woman_clothes_999 %></td>
-      <td><%= link_to "Парсинг", woman_clothes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Одежда, обувь и аксессуары / Женская обувь</th>
-      <td><%= @woman_shoes_999 %></td>
-      <td><%= link_to "Парсинг", woman_shoes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Телефоны и связь / Мобильные телефоны</th>
-      <td><%= @mobile_phones_999 %></td>
-      <td><%= link_to "Парсинг", mobile_phones_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Легковые авто</th>
-      <td><%= @passengers_cars_999 %></td>
-      <td><%= link_to "Парсинг", passengers_cars_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Запчасти и разборка легковых автомобилей</th>
-      <td><%= @parts_for_cars_999 %></td>
-      <td><%= link_to "Парсинг", parts_for_cars_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Запчасти для грузовых автомобилей</th>
-      <td><%= @parts_for_trucks_999 %></td>
-      <td><%= link_to "Парсинг", parts_for_trucks_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Диски и шины</th>
-      <td><%= @wheel_and_tires_999 %></td>
-      <td><%= link_to "Парсинг", wheel_and_tires_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Автобусы и микроавтобусы</th>
-      <td><%= @buses_and_minibuses_999 %></td>
-      <td><%= link_to "Парсинг", buses_and_minibuses_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Грузовые автомобили</th>
-      <td><%= @trucks_999 %></td>
-      <td><%= link_to "Парсинг", trucks_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Прицепы</th>
-      <td><%= @trailers_999 %></td>
-      <td><%= link_to "Парсинг", trailers_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Мотоциклы и мототехника</th>
-      <td><%= @motorcycles_999 %></td>
-      <td><%= link_to "Парсинг", motorcycles_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Мотоэкипировка</th>
-      <td><%= @moto_equipment_999 %></td>
-      <td><%= link_to "Парсинг", moto_equipment_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Гироскутеры, электросамокаты</th>
-      <td><%= @electric_scooters_999 %></td>
-      <td><%= link_to "Парсинг", electric_scooters_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Сельхозтехника</th>
-      <td><%= @agriculture_999 %></td>
-      <td><%= link_to "Парсинг", agriculture_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Спецтехника</th>
-      <td><%= @special_equipment_999 %></td>
-      <td><%= link_to "Парсинг", special_equipment_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
 
-    <tr>
-      <th scope="row">Транспорт / Автомагнитолы и DVD</th>
-      <td><%= @carcaraudio_999 %></td>
-      <td><%= link_to "Парсинг", carcaraudio_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / GPS, навигация</th>
-      <td><%= @gps_navigation_999 %></td>
-      <td><%= link_to "Парсинг", gps_navigation_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Автоакустика</th>
-      <td><%= @acoustic_999 %></td>
-      <td><%= link_to "Парсинг", acoustic_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Комплектующие автозвука</th>
-      <td><%= @supplies_of_car_audio_999 %></td>
-      <td><%= link_to "Парсинг", supplies_of_car_audio_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Видеорегистраторы</th>
-      <td><%= @video_recorders_999 %></td>
-      <td><%= link_to "Парсинг", video_recorders_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Радары, сигнализация</th>
-      <td><%= @radars_alarms_999 %></td>
-      <td><%= link_to "Парсинг", radars_alarms_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Велотранспорт</th>
-      <td><%= @bicycles_999 %></td>
-      <td><%= link_to "Парсинг", bicycles_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Водный транспорт</th>
-      <td><%= @snowmobiles_and_jet_ski_999 %></td>
-      <td><%= link_to "Парсинг", snowmobiles_and_jet_ski_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    <tr>
-      <th scope="row">Транспорт / Воздушный транспорт</th>
-      <td><%= @airplanes_999 %></td>
-      <td><%= link_to "Парсинг", airplanes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
-    </tr>
-    </tbody>
-  </table>
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#transportShow" role="button" aria-expanded="false" aria-controls="transportShow">
+      Транспорт
+    </a>
+
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#realestateShow" role="button" aria-expanded="false" aria-controls="realestateShow">
+      Недвижимость
+    </a>
+
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#phonesShow" role="button" aria-expanded="false" aria-controls="phonesShow">
+      Телефоны и связь
+    </a>
+
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#clothesShow" role="button" aria-expanded="false" aria-controls="clothesShow">
+      Одежда, обувь и аксессуары
+    </a>
+
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#businessShow" role="button" aria-expanded="false" aria-controls="businessShow  ">
+      Бизнес
+    </a>
+
+
+    <div class="collapse" id="transportShow">
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Транспорт / Легковые авто</th>
+          <td><%= @passengers_cars_999 %></td>
+          <td><%= link_to "Парсинг", passengers_cars_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Запчасти и разборка легковых автомобилей</th>
+          <td><%= @parts_for_cars_999 %></td>
+          <td><%= link_to "Парсинг", parts_for_cars_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Расходные материалы и комплектующие</th>
+          <td><%= @supplies_and_accessories_999 %></td>
+          <td><%= link_to "Парсинг", supplies_and_accessories_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Запчасти для грузовых автомобилей</th>
+          <td><%= @parts_for_trucks_999 %></td>
+          <td><%= link_to "Парсинг", parts_for_trucks_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Диски и шины</th>
+          <td><%= @wheel_and_tires_999 %></td>
+          <td><%= link_to "Парсинг", wheel_and_tires_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Инструменты и спецоборудование</th>
+          <td><%= @special_equipment_and_tools_999 %></td>
+          <td><%= link_to "Парсинг", special_equipment_and_tools_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Автостекла и автооптика</th>
+          <td><%= @auto_glass_and_optics_999 %></td>
+          <td><%= link_to "Парсинг", auto_glass_and_optics_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Автобусы и микроавтобусы</th>
+          <td><%= @buses_and_minibuses_999 %></td>
+          <td><%= link_to "Парсинг", buses_and_minibuses_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Грузовые автомобили</th>
+          <td><%= @trucks_999 %></td>
+          <td><%= link_to "Парсинг", trucks_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Прицепы</th>
+          <td><%= @trailers_999 %></td>
+          <td><%= link_to "Парсинг", trailers_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Мотоциклы и мототехника</th>
+          <td><%= @motorcycles_999 %></td>
+          <td><%= link_to "Парсинг", motorcycles_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Запчасти для мототехникиа</th>
+          <td><%= @spare_parts_for_motorcycles_999 %></td>
+          <td><%= link_to "Парсинг", spare_parts_for_motorcycles_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Мотоэкипировка</th>
+          <td><%= @moto_equipment_999 %></td>
+          <td><%= link_to "Парсинг", moto_equipment_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Гироскутеры, электросамокаты</th>
+          <td><%= @electric_scooters_999 %></td>
+          <td><%= link_to "Парсинг", electric_scooters_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Сельхозтехника</th>
+          <td><%= @agriculture_999 %></td>
+          <td><%= link_to "Парсинг", agriculture_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Спецтехника</th>
+          <td><%= @special_equipment_999 %></td>
+          <td><%= link_to "Парсинг", special_equipment_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Транспорт / Автомагнитолы и DVD</th>
+          <td><%= @carcaraudio_999 %></td>
+          <td><%= link_to "Парсинг", carcaraudio_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / GPS, навигация</th>
+          <td><%= @gps_navigation_999 %></td>
+          <td><%= link_to "Парсинг", gps_navigation_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Автоакустика</th>
+          <td><%= @acoustic_999 %></td>
+          <td><%= link_to "Парсинг", acoustic_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Комплектующие автозвука</th>
+          <td><%= @supplies_of_car_audio_999 %></td>
+          <td><%= link_to "Парсинг", supplies_of_car_audio_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Видеорегистраторы</th>
+          <td><%= @video_recorders_999 %></td>
+          <td><%= link_to "Парсинг", video_recorders_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Радары, сигнализация</th>
+          <td><%= @radars_alarms_999 %></td>
+          <td><%= link_to "Парсинг", radars_alarms_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Велотранспорт</th>
+          <td><%= @bicycles_999 %></td>
+          <td><%= link_to "Парсинг", bicycles_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Велоаксессуары</th>
+          <td><%= @bike_gear_999 %></td>
+          <td><%= link_to "Парсинг", bike_gear_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Велозапчасти и сервис</th>
+          <td><%= @spare_parts_for_bicycles_999 %></td>
+          <td><%= link_to "Парсинг", spare_parts_for_bicycles_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Водный транспорт</th>
+          <td><%= @snowmobiles_and_jet_ski_999 %></td>
+          <td><%= link_to "Парсинг", snowmobiles_and_jet_ski_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Воздушный транспорт</th>
+          <td><%= @airplanes_999 %></td>
+          <td><%= link_to "Парсинг", airplanes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Грузоперевозки</th>
+          <td><%= @cargo_999 %></td>
+          <td><%= link_to "Парсинг", cargo_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Автосервис и мотосервис</th>
+          <td><%= @auto_service_999 %></td>
+          <td><%= link_to "Парсинг", auto_service_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Аренда авто</th>
+          <td><%= @rent_a_car_999 %></td>
+          <td><%= link_to "Парсинг", rent_a_car_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Пассажироперевозки</th>
+          <td><%= @passenger_999 %></td>
+          <td><%= link_to "Парсинг", passenger_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Транспорт / Разное</th>
+          <td><%= @transport_miscellaneous_999 %></td>
+          <td><%= link_to "Парсинг", transport_miscellaneous_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="collapse" id="realestateShow">
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Недвижимость / Дома и дачи</th>
+          <td><%= @houses_and_garden_999 %></td>
+          <td><%= link_to "Парсинг", houses_and_garden_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Недвижимость / Квартиры и комнаты</th>
+          <td><%= @appartaments_and_rooms_999 %></td>
+          <td><%= link_to "Парсинг", appartaments_and_rooms_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Недвижимость / Земельные участки</th>
+          <td><%= @lands_999 %></td>
+          <td><%= link_to "Парсинг", lands_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Недвижимость / Коммерческая недвижимость</th>
+          <td><%= @commercial_real_estate_999 %></td>
+          <td><%= link_to "Парсинг", commercial_real_estate_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Недвижимость / Гаражи и парковки</th>
+          <td><%= @garages_and_parking_999 %></td>
+          <td><%= link_to "Парсинг", garages_and_parking_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Недвижимость / Разное</th>
+          <td><%= @real_estate_miscellaneous_999 %></td>
+          <td><%= link_to "Парсинг", real_estate_miscellaneous_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Недвижимость / Риэлторские услуги</th>
+          <td><%= @real_estate_services_999 %></td>
+          <td><%= link_to "Парсинг", real_estate_services_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div class="collapse" id="phonesShow">
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Телефоны и связь / Мобильные телефоны</th>
+          <td><%= @mobile_phones_999 %></td>
+          <td><%= link_to "Парсинг", mobile_phones_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Телефоны и связь / Аксессуары</th>
+          <td><%= @mobile_phones_accessories_999 %></td>
+          <td><%= link_to "Парсинг", mobile_phones_accessories_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Телефоны и связь / Запчасти для телефонов</th>
+          <td><%= @mobile_phones_parts_999 %></td>
+          <td><%= link_to "Парсинг", mobile_phones_parts_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Телефоны и связь / Номера и абонементы</th>
+          <td><%= @mobile_numbers_999 %></td>
+          <td><%= link_to "Парсинг", mobile_numbers_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Телефоны и связь / Сервис и ремонт телефонов</th>
+          <td><%= @mobile_service_999 %></td>
+          <td><%= link_to "Парсинг", mobile_service_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Телефоны и связь / Стационарные телефоны</th>
+          <td><%= @home_phones_999 %></td>
+          <td><%= link_to "Парсинг", home_phones_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Телефоны и связь / Рации и радиостанции</th>
+          <td><%= @radio_999 %></td>
+          <td><%= link_to "Парсинг", radio_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Телефоны и связь / Офисные АТС</th>
+          <td><%= @pbx_999 %></td>
+          <td><%= link_to "Парсинг", pbx_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Телефоны и связь / Факсы</th>
+          <td><%= @fax_999 %></td>
+          <td><%= link_to "Парсинг", fax_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Телефоны и связь / Зарядки и аккумуляторы</th>
+          <td><%= @mobile_chargers_999 %></td>
+          <td><%= link_to "Парсинг", mobile_chargers_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Телефоны и связь / Разное</th>
+          <td><%= @phones_miscellaneous_999 %></td>
+          <td><%= link_to "Парсинг", phones_miscellaneous_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="collapse" id="clothesShow">
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Женская одежда</th>
+          <td><%= @woman_clothes_999 %></td>
+          <td><%= link_to "Парсинг", woman_clothes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Женская обувь</th>
+          <td><%= @woman_shoes_999 %></td>
+          <td><%= link_to "Парсинг", woman_shoes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="collapse" id="businessShow">
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Бизнес / Действующий бизнес</th>
+          <td><%= @current_business_999 %></td>
+          <td><%= link_to "Парсинг", current_business_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бизнес / Сайты и разработка</th>
+          <td><%= @sites_and_developing_999 %></td>
+          <td><%= link_to "Парсинг", sites_and_developing_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+
   </div>
 </div>

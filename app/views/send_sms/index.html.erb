@@ -9,16 +9,16 @@
         <div class="input-group-prepend">
           <%= label_tag(:task_id, "Выбрать заявку", class: "input-group-text") %>
         </div>
-            <% if @tasks.nil? %>
+            <% if @tasks.nil? || @tasks.find(status: 2).present? %>
               <select disabled class="custom-select">
               <option selected> Нет открытых задач </option>
               </select>
               <% else %>
-            <% @tasks.sort.each do |task| %>
-            <select name="task_id" id="task_id" class="custom-select">
+          <select name="task_id" id="task_id" class="custom-select">
+          <% @tasks.sort.each do |task| %>
               <option value="<%= task %>"> <%= task %> </option>
-            </select>
             <% end %>
+          </select>
             <% end %>
 
         </div>
@@ -42,10 +42,8 @@
         <select name="sim_card_id" id="sim_card_id" class="form-control">
           <% @sim_cards.each do |sim_card| %>
             <option value="<%= sim_card.id %>"> <%= sim_card.number %> (Осталось: <%= sim_card.sms_available %> sms, Оператор: <%= sim_card.operator %>)</option>
-            </select>
-
           <% end %>
-
+        </select>
       <% end %>
     </div>
 

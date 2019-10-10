@@ -49,10 +49,8 @@
                 <select name="sim_card_id" id="sim_card_id" class="form-control">
                   <% @sim_cards.each do |sim_card| %>
                     <option value="<%= sim_card.id %>"> <%= sim_card.number %> (Осталось: <%= sim_card.sms_available %> sms, Оператор: <%= sim_card.operator %>)</option>
-                    </select>
-
                   <% end %>
-
+                </select>
                 <% end %>
             </div>
             <div class="form-group col-md-6">
@@ -69,15 +67,14 @@
 
       </div>
 
-      <br>
-      <% unless notice.nil? %>
-        <div class="alert alert-dark" role="alert">
-          <%= notice %>
-        </div>
-      <% end %>
     </div>
 
-
+    <% unless notice.nil? %>
+      <br>
+      <div class="alert alert-dark" role="alert">
+        <%= notice %>
+      </div>
+    <% end %>
 
 
     <h2>Учет сим-карт</h2>
@@ -96,8 +93,8 @@
       <% @sim_cards.each do |sim_card| %>
       <tr>
         <th scope="row"><%= sim_card.number %></th>
-        <td>считать из тасков</td>
-        <td>считать из тасков</td>
+        <td><%= Task.where(status: 1, sim_card_id: sim_card.id).count %></td>
+        <td><%= Task.where(status: 1, sim_card_id: sim_card.id, created_at: Time.now.beginning_of_month..Time.now.end_of_month).count %></td>
         <td><%= sim_card.price.to_i %> лей</td>
         <td>
           <%= sim_card.sim_card_funds.sum(:summ).to_i %> лей
