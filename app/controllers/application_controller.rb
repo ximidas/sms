@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   end
 
   def create_task
+    @clients = Client.all
     @categories = Number.distinct.pluck(:category)
     @regions = Number.distinct.pluck(:region)
     @countries = Number.distinct.pluck(:country)
@@ -61,6 +62,41 @@ class ApplicationController < ActionController::Base
     @rent_a_car_999 = Number.where(site: '999.md', category: 'Транспорт / Аренда авто').count
     @passenger_999 = Number.where(site: '999.md', category: 'Транспорт / Пассажироперевозки').count
     @transport_miscellaneous_999 = Number.where(site: '999.md', category: 'Транспорт / Разное').count
+
+    # Computers and Equipment
+    @laptops_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Ноутбуки').count
+    @desktops_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Настольные компьютеры').count
+    @game_console_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Игровые приставки').count
+    @tablets_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Планшеты').count
+    @pc_accessories_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Аксессуары').count
+    @printers_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Принтеры').count
+    @copiers_multifunction_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Копировальные аппараты, МФУ').count
+    @consumables_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Расходные материалы').count
+    @office_equipment_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Офисная техника').count
+    @calculators_notepads_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Калькуляторы, записные книжки').count
+    @scanners_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Сканеры').count
+    @software_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Программное обеспечение').count
+    @computer_services_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Обслуживание компьютеров и оргтехники').count
+    @computers_miscellaneous_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Разное').count
+    @monitors_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Мониторы').count
+    @accessories_laptops_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Комплектующие для ноутбуков').count
+    @hdd_ssd_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / HDD, SSD').count
+    @pc_video_cards_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Видеокарты').count
+    @pc_audio_multimedia_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Аудио и мультимедиа').count
+    @pc_memory_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Память RAM').count
+    @pc_keyboards_mice_joysticks_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Клавиатуры, мыши, джойстики').count
+    @pc_networking_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Сетевое оборудование').count
+    @pc_motherboards_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Материнские платы').count
+    @pc_processors_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Процессоры').count
+    @cases_powersupplies_ups_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Корпуса и блоки питания, UPS').count
+    @usb_flash_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / USB Flash').count
+    @cd_dvd_rom_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / CD/DVD ROM').count
+    @pc_coolers_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Кулеры и охлаждение').count
+    @usb_pcmcia_firewire_infrared_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / USB, PCMCIA, FireWire, InfraRed').count
+    @pc_controllers_adapters_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Контроллеры и адаптеры').count
+    @pc_cd_dvds_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Диски CD, DVD').count
+    @radio_components_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Радиодетали').count
+    @storage_fdd_mo_zip_streamers_999 = Number.where(site: '999.md', category: 'Компьютеры и оргтехника / Накопители FDD, MO, ZIP, стримеры').count
 
     # Business
     @current_business_999 = Number.where(site: '999.md', category: 'Бизнес / Действующий бизнес').count

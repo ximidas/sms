@@ -3,6 +3,7 @@ class CreateTasks < ActiveRecord::Migration[6.0]
     create_table :tasks do |t|
       t.string :task_id
       t.integer :client_id
+      t.float :payment_received
       t.string :phone
       t.string :region
       t.string :category

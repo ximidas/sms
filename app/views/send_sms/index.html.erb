@@ -1,5 +1,29 @@
 <%= render 'layouts/header' %>
 
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+        $('#table1').DataTable({
+            "columnDefs": [ {
+                "targets": [0],
+                "orderable": false,
+            } ]
+        }).columns(-1).order('desc').draw();
+    } );
+</script>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+        $('#table2').DataTable({
+            "columnDefs": [ {
+                "targets": [0],
+                "orderable": false,
+            } ]
+        });
+    } );
+</script>
+
 <div class="container">
   <div class="text-center">
     <%= form_with url: start_send_sms_path do |f| %>
@@ -9,14 +33,14 @@
         <div class="input-group-prepend">
           <%= label_tag(:task_id, "Выбрать заявку", class: "input-group-text") %>
         </div>
-            <% if @tasks.nil? || @tasks.find(status: 2).present? %>
+            <% if @tasks.nil? %>
               <select disabled class="custom-select">
               <option selected> Нет открытых задач </option>
               </select>
               <% else %>
           <select name="task_id" id="task_id" class="custom-select">
           <% @tasks.sort.each do |task| %>
-              <option value="<%= task %>"> <%= task %> </option>
+              <option value="<%= task %>"> <%= task %> (<%= @all_tasks.where(task_id: task).where(status: 1).count %> из <%= @all_tasks.where(task_id: task).count %>) </option>
             <% end %>
           </select>
             <% end %>
@@ -63,25 +87,30 @@
 <br><br>
   <div class="text-center">
     <h1>Заявки</h1>
-    <table class="table table-striped">
+    <table id="table1" class="table table-striped">
       <thead>
       <tr>
-        <th scope="col">#ID Заявки</th>
-        <th scope="col">Клиент</th>
-        <th scope="col">Кол-во отправленых</th>
-        <th scope="col">Статус</th>
-        <th scope="col">Просмотр</th>
+        <th>#ID Заявки</th>
+        <th>Клиент</th>
+        <th>Оплаченная сумма</th>
+        <th>Заработано</th>
+        <th>Кол-во отправленых</th>
+        <th>Статус</th>
+        <th>Просмотр</th>
+        <th>Дата создания</th>
       </tr>
       </thead>
       <tbody>
-      <tr>
      <% @all_tasks.select(:task_id, :client_id).distinct(:task_id).each do |task| %>
       <tr>
-        <th scope="row"><%= task.task_id %></th>
-        <td><%= Client.where(id: task.client_id).pluck(:name).first %></td>
+        <td><%= task.task_id %></td>
+        <td><%= Client.where(id: task.client_id).pluck(:company).first %></td>
+        <td><%= @all_tasks.where(task_id: task.task_id).sum(:payment_received) %></td>
+        <td><%= SimCard.where(id: @all_tasks.where(task_id: task.task_id).pluck(:sim_card_id).first.to_i).pluck(:sms_cost).first.to_f * @all_tasks.where(task_id: task.task_id).where(status: 1).count.to_i %></td>
         <td><%= @all_tasks.where(task_id: task.task_id).where(status: 1).count %> из <%= @all_tasks.where(task_id: task.task_id).count %></td>
         <td><%= @all_tasks.where(task_id: task.task_id).where(status: 1).count === @all_tasks.where(task_id: task.task_id).count ? 'Закрыто' : 'Открыто'  %></td>
         <td><%= link_to 'Открыть', task_view_path(task_id: task.task_id), class: "btn btn-dark btn-sm" %></td>
+        <td><%= @all_tasks.where(task_id: task.task_id).first.created_at %></td>
       </tr>
         <% end %>
       </tbody>
@@ -90,22 +119,25 @@
 
   <div class="text-center">
     <h1>Клиенты</h1>
-    <table class="table table-striped">
+    <table id="table2" class="table table-striped">
       <thead>
       <tr>
         <th scope="col">Клиент</th>
         <th scope="col">Кол-во заявок</th>
+        <th scope="col">Оплатил смс на сумму</th>
+        <th scope="col">Заработано на клиенте</th>
       </tr>
       </thead>
       <tbody>
       <% @clients.each do |client| %>
       <tr>
-        <th><%= client.name %></th>
+        <th><%= client.company %></th>
         <td><%= @all_tasks.where(client_id: client.id).distinct.pluck(:task_id).count %></td>
+        <td><%= @all_tasks.where(client_id: client.id).sum(:payment_received) %></td>
+        <td><%= SimCard.where(id: @all_tasks.where(client_id: client.id).pluck(:sim_card_id).first.to_i).pluck(:sms_cost).first.to_f * @all_tasks.where(client_id: client.id).where(status: 1).count.to_i %></td>
       </tr>
         <% end %>
       </tbody>
     </table>
   </div>
 </div>
-

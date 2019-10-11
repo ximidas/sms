@@ -5,6 +5,7 @@ class CreateSimCards < ActiveRecord::Migration[6.0]
       t.integer :sms_available
       t.float :price
       t.string :operator
+      t.float :sms_cost
       t.timestamps
     end
   end

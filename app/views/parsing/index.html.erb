@@ -47,6 +47,10 @@
       Телефоны и связь
     </a>
 
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#pcandlaptopsShow" role="button" aria-expanded="false" aria-controls="pcandlaptopsShow">
+      Компьютеры и оргтехника
+    </a>
+
     <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#clothesShow" role="button" aria-expanded="false" aria-controls="clothesShow">
       Одежда, обувь и аксессуары
     </a>
@@ -350,6 +354,188 @@
           <th scope="row">Телефоны и связь / Разное</th>
           <td><%= @phones_miscellaneous_999 %></td>
           <td><%= link_to "Парсинг", phones_miscellaneous_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="collapse" id="pcandlaptopsShow">
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Ноутбуки</th>
+          <td><%= @laptops_999 %></td>
+          <td><%= link_to "Парсинг", laptops_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Настольные компьютеры</th>
+          <td><%= @desktops_999 %></td>
+          <td><%= link_to "Парсинг", desktops_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Игровые приставки</th>
+          <td><%= @game_console_999 %></td>
+          <td><%= link_to "Парсинг", game_console_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Планшеты</th>
+          <td><%= @tablets_999 %></td>
+          <td><%= link_to "Парсинг", tablets_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Аксессуары</th>
+          <td><%= @pc_accessories_999 %></td>
+          <td><%= link_to "Парсинг", pc_accessories_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Принтеры</th>
+          <td><%= @printers_999 %></td>
+          <td><%= link_to "Парсинг", printers_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Копировальные аппараты, МФУ</th>
+          <td><%= @copiers_multifunction_999 %></td>
+          <td><%= link_to "Парсинг", copiers_multifunction_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Расходные материалы</th>
+          <td><%= @consumables_999 %></td>
+          <td><%= link_to "Парсинг", consumables_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Офисная техника</th>
+          <td><%= @office_equipment_999 %></td>
+          <td><%= link_to "Парсинг", office_equipment999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Калькуляторы, записные книжки</th>
+          <td><%= @calculators_notepads_999 %></td>
+          <td><%= link_to "Парсинг", calculators_notepads_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Сканеры</th>
+          <td><%= @scanners_999 %></td>
+          <td><%= link_to "Парсинг", scanners_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Программное обеспечение</th>
+          <td><%= @software_999 %></td>
+          <td><%= link_to "Парсинг", software_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Обслуживание компьютеров и оргтехники</th>
+          <td><%= @computer_services_999 %></td>
+          <td><%= link_to "Парсинг", computer_services_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Разное</th>
+          <td><%= @computers_miscellaneous_999 %></td>
+          <td><%= link_to "Парсинг", computers_miscellaneous_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Мониторы</th>
+          <td><%= @monitors_999 %></td>
+          <td><%= link_to "Парсинг", monitors_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Комплектующие для ноутбуков</th>
+          <td><%= @accessories_laptops_999 %></td>
+          <td><%= link_to "Парсинг", accessories_laptops_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / HDD, SSD</th>
+          <td><%= @hdd_ssd_999 %></td>
+          <td><%= link_to "Парсинг", hdd_ssd_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Видеокарты</th>
+          <td><%= @pc_video_cards_999 %></td>
+          <td><%= link_to "Парсинг", pc_video_cards_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Аудио и мультимедиа</th>
+          <td><%= @pc_audio_multimedia_999 %></td>
+          <td><%= link_to "Парсинг", pc_audio_multimedia_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Память RAM</th>
+          <td><%= @pc_memory_999 %></td>
+          <td><%= link_to "Парсинг", pc_memory_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Клавиатуры, мыши, джойстики</th>
+          <td><%= @pc_keyboards_mice_joysticks_999 %></td>
+          <td><%= link_to "Парсинг", pc_keyboards_mice_joysticks_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Сетевое оборудование</th>
+          <td><%= @pc_networking_999 %></td>
+          <td><%= link_to "Парсинг", pc_networking_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Материнские платы</th>
+          <td><%= @pc_motherboards_999 %></td>
+          <td><%= link_to "Парсинг", pc_motherboards_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Процессоры</th>
+          <td><%= @pc_processors_999 %></td>
+          <td><%= link_to "Парсинг", pc_processors_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Корпуса и блоки питания, UPS</th>
+          <td><%= @cases_powersupplies_ups_999 %></td>
+          <td><%= link_to "Парсинг", cases_powersupplies_ups_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / USB Flash</th>
+          <td><%= @usb_flash_999 %></td>
+          <td><%= link_to "Парсинг", usb_flash_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / CD/DVD ROM</th>
+          <td><%= @cd_dvd_rom_999 %></td>
+          <td><%= link_to "Парсинг", cd_dvd_rom_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Кулеры и охлаждение</th>
+          <td><%= @pc_coolers_999 %></td>
+          <td><%= link_to "Парсинг", pc_coolers_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / USB, PCMCIA, FireWire, InfraRed</th>
+          <td><%= @usb_pcmcia_firewire_infrared_999 %></td>
+          <td><%= link_to "Парсинг", usb_pcmcia_firewire_infrared_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Контроллеры и адаптеры</th>
+          <td><%= @pc_controllers_adapters_999 %></td>
+          <td><%= link_to "Парсинг", pc_controllers_adapters_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Диски CD, DVD</th>
+          <td><%= @pc_cd_dvds_999 %></td>
+          <td><%= link_to "Парсинг", pc_cd_dvds_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Радиодетали</th>
+          <td><%= @radio_components_999 %></td>
+          <td><%= link_to "Парсинг", radio_components_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Компьютеры и оргтехника / Накопители FDD, MO, ZIP, стримеры</th>
+          <td><%= @storage_fdd_mo_zip_streamers_999 %></td>
+          <td><%= link_to "Парсинг", storage_fdd_mo_zip_streamers_999_path, class: "btn btn-sm btn-outline-warning" %></td>
         </tr>
         </tbody>
       </table>

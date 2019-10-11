@@ -1,11 +1,26 @@
 <%= render 'layouts/header' %>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+        $('#table1').DataTable({
+            "columnDefs": [ {
+                "targets": [0],
+                "orderable": false,
+            } ]
+        });
+    } );
+</script>
+
+
 <div class="container">
   <div class="text-center">
     <h3>Детализация</h3>
 <p>ID задачи: <%= @tasks.first.task_id %></p>
-<p>Клиент: <%= Client.where(id: @tasks.first.client_id).pluck(:name).first %></p>
+<p>Клиент: <%= Client.where(id: @tasks.first.client_id).pluck(:company).first %></p>
   </div>
-<table class="table">
+<table id="table1" class="table">
   <thead class="thead-dark">
   <tr>
     <th scope="col">Телефон</th>

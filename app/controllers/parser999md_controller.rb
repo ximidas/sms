@@ -231,6 +231,140 @@ class Parser999mdController < ApplicationController
     parser('https://91.220.207.88/ru/list/clothes-and-shoes/shoes-for-women?page=', 'Одежда, обувь и аксессуары / Женская обувь', 85)
   end
 
+  ## COMPUTERS AND EQUIPMENT
+
+  def laptops
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/laptops?page=', 'Компьютеры и оргтехника / Ноутбуки', 53)
+  end
+
+  def desktops
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/desktop-computers?page=', 'Компьютеры и оргтехника / Настольные компьютеры', 22)
+  end
+
+  def game_console
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/game-consoles?page=', 'Компьютеры и оргтехника / Игровые приставки', 24)
+  end
+
+  def tablets
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/tablet?page=', 'Компьютеры и оргтехника / Планшеты', 24)
+  end
+
+  def pc_accessories
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/accessories?page=', 'Компьютеры и оргтехника / Аксессуары', 6)
+  end
+
+  def printers
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/printers?page=', 'Компьютеры и оргтехника / Принтеры', 9)
+  end
+
+  def copiers_multifunction
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/copiers-multifunction?page=', 'Компьютеры и оргтехника / Копировальные аппараты, МФУ', 7)
+  end
+
+  def consumables
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/consumables?page=', 'Компьютеры и оргтехника / Расходные материалы', 7)
+  end
+
+  def office_equipment
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/office-equipment?page=', 'Компьютеры и оргтехника / Офисная техника', 4)
+  end
+
+  def calculators_notepads
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/calculators-notepads?page=', 'Компьютеры и оргтехника / Калькуляторы, записные книжки', 4)
+  end
+
+  def scanners
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/scanners?page=', 'Компьютеры и оргтехника / Сканеры', 2)
+  end
+
+  def software
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/software?page=', 'Компьютеры и оргтехника / Программное обеспечение', 2)
+  end
+
+  def computer_services
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/computer-services?page=', 'Компьютеры и оргтехника / Обслуживание компьютеров и оргтехники', 36)
+  end
+
+  def computers_miscellaneous
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/miscellaneous?page=', 'Компьютеры и оргтехника / Разное', 2)
+  end
+
+  def monitors
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/monitors?page=', 'Компьютеры и оргтехника / Мониторы', 19)
+  end
+
+  def accessories_laptops
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/accessories-for-laptops?page=', 'Компьютеры и оргтехника / Комплектующие для ноутбуков', 16)
+  end
+
+  def hdd_ssd
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/hdd?page=', 'Компьютеры и оргтехника / HDD, SSD', 13)
+  end
+
+  def pc_video_cards
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/video?page=', 'Компьютеры и оргтехника / Видеокарты', 8)
+  end
+
+  def pc_audio_multimedia
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/audio-and-multimedia?page=', 'Компьютеры и оргтехника / Аудио и мультимедиа', 12)
+  end
+
+  def pc_memory
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/memory?page=', 'Компьютеры и оргтехника / Память RAM', 12)
+  end
+
+  def pc_keyboards_mice_joysticks
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/keyboards-mice-joysticks?page=', 'Компьютеры и оргтехника / Клавиатуры, мыши, джойстики', 19)
+  end
+
+  def pc_networking
+      parser('https://91.220.207.88/ru/list/computers-and-office-equipment/networking?page=', 'Компьютеры и оргтехника / Сетевое оборудование', 12)
+  end
+
+  def pc_motherboards
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/motherboard?page=', 'Компьютеры и оргтехника / Материнские платы', 8)
+  end
+
+  def pc_processors
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/processors?page=', 'Компьютеры и оргтехника / Процессоры', 8)
+  end
+
+  def cases_powersupplies_ups
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/cases-and-power-supplies-ups?page=', 'Компьютеры и оргтехника / Корпуса и блоки питания, UPS', 10)
+  end
+
+  def usb_flash
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/usb-flash?page=', 'Компьютеры и оргтехника / USB Flash', 5)
+  end
+
+  def cd_dvd_rom
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/cd-dvd-rom?page=', 'Компьютеры и оргтехника / CD/DVD ROM', 2)
+  end
+
+  def pc_coolers
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/cooler-and-cooling?page=', 'Компьютеры и оргтехника / Кулеры и охлаждение', 4)
+  end
+
+  def usb_pcmcia_firewire_infrared
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/usb-pcmcia-firewire-infrared?page=', 'Компьютеры и оргтехника / USB, PCMCIA, FireWire, InfraRed', 2)
+  end
+
+  def pc_controllers_adapters
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/controllers-and-adapters?page=', 'Компьютеры и оргтехника / Контроллеры и адаптеры', 6)
+  end
+
+  def pc_cd_dvds
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/drives-cd-dvd?page=', 'Компьютеры и оргтехника / Диски CD, DVD', 2)
+  end
+
+  def radio_components
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/radio-components?page=', 'Компьютеры и оргтехника / Радиодетали', 2)
+  end
+
+  def storage_fdd_mo_zip_streamers
+    parser('https://91.220.207.88/ru/list/computers-and-office-equipment/storage-fdd-mo-zip-streamers?page=', 'Компьютеры и оргтехника / Накопители FDD, MO, ZIP, стримеры', 2)
+  end
+
   private
   def parser(page, category, end_page)
 

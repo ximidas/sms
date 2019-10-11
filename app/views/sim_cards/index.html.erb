@@ -1,4 +1,16 @@
 <%= render 'layouts/header' %>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+        $('#table1').DataTable({
+            "columnDefs": [ {
+                "targets": [0],
+                "orderable": false,
+            } ]
+        }).columns(-1).order('desc').draw();
+    } );
+</script>
 
 <div class="container">
 
@@ -20,11 +32,15 @@
               <%= label_tag(:operator, "Оператор") %>
               <%= f.text_field(:operator, class: 'form-control') %>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
               <%= label_tag(:price, "Стоимость") %>
               <%= f.text_field(:price, class: 'form-control') %>
             </div>
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
+              <%= label_tag(:sms_cost, "Себестоимость смс") %>
+              <%= f.text_field(:sms_cost, class: 'form-control') %>
+            </div>
+            <div class="form-group col-md-4">
               <%= label_tag(:sms_available, "Доступно смс") %>
               <%= f.text_field(:sms_available, class: 'form-control') %>
             </div>
@@ -78,13 +94,14 @@
 
 
     <h2>Учет сим-карт</h2>
-    <table class="table">
+    <table id="table1" class="table">
       <thead>
       <tr>
         <th scope="col">Номер карты</th>
         <th scope="col">Общее кол-во отправленных смс</th>
         <th scope="col">Кол-во смс в текущем месяце</th>
         <th scope="col">Цена покупки</th>
+        <th scope="col">Себестоимость смс</th>
         <th scope="col">Сумма пополнений</th>
         <th scope="col">Дата добавления</th>
       </tr>
@@ -96,6 +113,7 @@
         <td><%= Task.where(status: 1, sim_card_id: sim_card.id).count %></td>
         <td><%= Task.where(status: 1, sim_card_id: sim_card.id, created_at: Time.now.beginning_of_month..Time.now.end_of_month).count %></td>
         <td><%= sim_card.price.to_i %> лей</td>
+        <td><%= sim_card.sms_cost %></td>
         <td>
           <%= sim_card.sim_card_funds.sum(:summ).to_i %> лей
           <%= link_to 'посмотреть', view_deposit_history_path(id: sim_card.id), class: "btn btn-outline-dark btn-sm" %>

@@ -16,7 +16,9 @@ ActiveRecord::Schema.define(version: 2019_10_09_154917) do
   enable_extension "plpgsql"
 
   create_table "clients", force: :cascade do |t|
-    t.string "name"
+    t.string "company"
+    t.string "contact_name"
+    t.string "phone"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -43,6 +45,7 @@ ActiveRecord::Schema.define(version: 2019_10_09_154917) do
     t.integer "sms_available"
     t.float "price"
     t.string "operator"
+    t.float "sms_cost"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -50,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_10_09_154917) do
   create_table "tasks", force: :cascade do |t|
     t.string "task_id"
     t.integer "client_id"
+    t.float "payment_received"
     t.string "phone"
     t.string "region"
     t.string "category"
