@@ -3,9 +3,11 @@ class TasksController < ApplicationController
   def create
 
     if params[:client_id].nil? || params[:client_id] === "Выбрать"
+      unless params[:contact_name].empty? || params[:company].empty? || params[:phone].empty?
       @client = Client.new
       @client.update(contact_name: params[:contact_name], company: params[:company], phone: params[:phone])
       @client_id = @client.id
+      end
     else
       @client_id = params[:client_id].to_i
     end
@@ -19,7 +21,7 @@ class TasksController < ApplicationController
 
     if @categories.nil? || @sms_quantity.zero? || @client_id.nil?
 
-      redirect_to create_task_path, notice: "Не указано: #{@categories.nil? ? '- Категория ' : ''}  #{@sms_quantity.zero? ? '- Кол-во смс ' : ''} #{@client_id.nil? ? '- Клиент' : ''}"
+      redirect_to create_task_path, notice: "Укажите: #{@categories.nil? ? '<li><b>Категорию</b></li> ' : ''}  #{@sms_quantity.zero? ? '<li><b>Кол-во смс</b></li> ' : ''} #{@client_id.nil? ? '<li><b>Клиент</b></li>' : ''}"
 
     else
 

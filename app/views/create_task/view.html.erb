@@ -27,6 +27,7 @@
     <th scope="col">Регион</th>
     <th scope="col">Статус</th>
     <th scope="col">Отправлено с сим-карты</th>
+    <th scope="col">Отправлено</th>
   </tr>
   </thead>
   <tbody>
@@ -36,6 +37,7 @@
     <td><%= task.region %></td>
     <td><%= task.status == 1 ? 'Отправлено' : 'Не отправлено' %></td>
     <td><%= SimCard.where(id: task.sim_card_id).pluck(:number).first %></td>
+    <td><%= task.updated_at.strftime("%-d.%-m.%Y %H:%M:%S") %></td>
   </tr>
     <% end %>
   </tbody>

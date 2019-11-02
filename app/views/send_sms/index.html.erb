@@ -1,5 +1,8 @@
 <%= render 'layouts/header' %>
 
+
+<!-- Сделать на каждой заявку ПОСТ информацию с конверсией. К примеру поинтересовался у клиента и проставил конверсию реальную. Потом анализ делается и понимаешь насколько сильная БД телефонов по данной нише -->
+
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
 <script type="text/javascript" charset="utf-8">
@@ -33,7 +36,7 @@
         <div class="input-group-prepend">
           <%= label_tag(:task_id, "Выбрать заявку", class: "input-group-text") %>
         </div>
-            <% if @tasks.nil? %>
+            <% if @tasks.nil? || !Task.where(status: 2).exists? %>
               <select disabled class="custom-select">
               <option selected> Нет открытых задач </option>
               </select>
@@ -105,12 +108,12 @@
       <tr>
         <td><%= task.task_id %></td>
         <td><%= Client.where(id: task.client_id).pluck(:company).first %></td>
-        <td><%= @all_tasks.where(task_id: task.task_id).sum(:payment_received) %></td>
-        <td><%= SimCard.where(id: @all_tasks.where(task_id: task.task_id).pluck(:sim_card_id).first.to_i).pluck(:sms_cost).first.to_f * @all_tasks.where(task_id: task.task_id).where(status: 1).count.to_i %></td>
+        <td><%= @all_tasks.where(task_id: task.task_id).sum(:payment_received).round %></td>
+        <td><%= '%.2f' % ( (@all_tasks.where(task_id: task.task_id).where(status: 1).count == 0 ? 0 : @all_tasks.where(task_id: task.task_id).sum(:payment_received).round) - (SimCard.where(id: @all_tasks.where(task_id: task.task_id).pluck(:sim_card_id).first.to_i).pluck(:sms_cost).first.to_f * @all_tasks.where(task_id: task.task_id).where(status: 1).count) ) %></td>
         <td><%= @all_tasks.where(task_id: task.task_id).where(status: 1).count %> из <%= @all_tasks.where(task_id: task.task_id).count %></td>
         <td><%= @all_tasks.where(task_id: task.task_id).where(status: 1).count === @all_tasks.where(task_id: task.task_id).count ? 'Закрыто' : 'Открыто'  %></td>
         <td><%= link_to 'Открыть', task_view_path(task_id: task.task_id), class: "btn btn-dark btn-sm" %></td>
-        <td><%= @all_tasks.where(task_id: task.task_id).first.created_at %></td>
+        <td><%= @all_tasks.where(task_id: task.task_id).first.created_at.strftime("%-d.%-m.%Y %H:%M:%S") %></td>
       </tr>
         <% end %>
       </tbody>
@@ -133,8 +136,8 @@
       <tr>
         <th><%= client.company %></th>
         <td><%= @all_tasks.where(client_id: client.id).distinct.pluck(:task_id).count %></td>
-        <td><%= @all_tasks.where(client_id: client.id).sum(:payment_received) %></td>
-        <td><%= SimCard.where(id: @all_tasks.where(client_id: client.id).pluck(:sim_card_id).first.to_i).pluck(:sms_cost).first.to_f * @all_tasks.where(client_id: client.id).where(status: 1).count.to_i %></td>
+        <td><%= @all_tasks.where(client_id: client.id).sum(:payment_received).round %></td>
+        <td><%= '%.2f' % (@all_tasks.where(client_id: client.id).sum(:payment_received).round - (SimCard.where(id: @all_tasks.where(client_id: client.id).pluck(:sim_card_id).first.to_i).pluck(:sms_cost).first.to_f * @all_tasks.where(client_id: client.id).where(status: 1).count.to_i)) %></td>
       </tr>
         <% end %>
       </tbody>

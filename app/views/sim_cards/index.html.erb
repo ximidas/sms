@@ -116,9 +116,11 @@
         <td><%= sim_card.sms_cost %></td>
         <td>
           <%= sim_card.sim_card_funds.sum(:summ).to_i %> лей
+          <% if SimCardFund.where(sim_card_id: sim_card.id).exists? %>
           <%= link_to 'посмотреть', view_deposit_history_path(id: sim_card.id), class: "btn btn-outline-dark btn-sm" %>
+            <% end %>
         </td>
-        <td><%= sim_card.created_at %></td>
+        <td><%= sim_card.created_at.strftime("%-d.%-m.%Y %H:%M:%S") %></td>
       </tr>
         <% end %>
       </tbody>

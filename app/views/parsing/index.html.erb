@@ -25,6 +25,10 @@
     </table>
   </div>
   </div>
+  <div class="text-center">
+    <h3>Общее число</h3>
+    <p><%= @numbers_999 + @yellowPages + @fitness + @tour_agency %></p>
+  </div>
 
     <div class="text-center">
     <%= image_pack_tag '999.png', size: "300x170" %>
@@ -51,16 +55,64 @@
       Компьютеры и оргтехника
     </a>
 
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#constructionrepairShow" role="button" aria-expanded="false" aria-controls="pcandlaptopsShow">
+      Строительство и ремонт
+    </a>
+
     <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#clothesShow" role="button" aria-expanded="false" aria-controls="clothesShow">
       Одежда, обувь и аксессуары
     </a>
 
-    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#businessShow" role="button" aria-expanded="false" aria-controls="businessShow  ">
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#furnitureShow" role="button" aria-expanded="false" aria-controls="furnitureShow">
+      Мебель и интерьер
+    </a>
+<br><br>
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#autovideofotoShow" role="button" aria-expanded="false" aria-controls="autovideofotoShow">
+      Аудио-Видео-Фото
+    </a>
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#allelseShow" role="button" aria-expanded="false" aria-controls="allelseShow">
+      Все остальное
+    </a>
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#allforcelebrationsShow" role="button" aria-expanded="false" aria-controls="allforcelebrationsShow">
+      Все для торжеств
+    </a>
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#household-appliances" role="button" aria-expanded="false" aria-controls="household-appliancesShow">
+      Бытовая техника
+    </a>
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#sports-health-and-beauty" role="button" aria-expanded="false" aria-controls="sports-health-and-beauty">
+      Спорт, здоровье, красота
+    </a>
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#tourism_leisureShow" role="button" aria-expanded="false" aria-controls="tourism_leisureShow">
+      Туризм, отдых и развлечения
+    </a>
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#businessShow" role="button" aria-expanded="false" aria-controls="businessShow">
       Бизнес
     </a>
+<br><br>
 
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#all-for-home-and-office" role="button" aria-expanded="false" aria-controls="all-for-home-and-office">
+      Все для дома и офиса
+    </a>
+
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#children-world" role="button" aria-expanded="false" aria-controls="children-world">
+      Детский мир
+    </a>
+
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#agriculture" role="button" aria-expanded="false" aria-controls="agriculture">
+      Сельское хозяйство
+    </a>
+
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#animals-and-plants" role="button" aria-expanded="false" aria-controls="animals-and-plants">
+      Питомцы и растения
+    </a>
+
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#musical-instruments" role="button" aria-expanded="false" aria-controls="musical-instruments">
+      Музыкальные инструменты
+    </a>
 
     <div class="collapse" id="transportShow">
+      <br>
+      <%= link_to "Спарсить всё", transport_all_999_path, class: "btn btn-success" %><br>
       <br>
       <table class="table table-bordered table-dark">
         <thead>
@@ -238,6 +290,8 @@
 
     <div class="collapse" id="realestateShow">
       <br>
+      <%= link_to "Спарсить всё", real_estate_all_999_path, class: "btn btn-success" %><br>
+      <br>
       <table class="table table-bordered table-dark">
         <thead>
         <tr>
@@ -289,6 +343,8 @@
     </div>
 
     <div class="collapse" id="phonesShow">
+      <br>
+      <%= link_to "Спарсить всё", parse_phones_all_999_path, class: "btn btn-success" %><br>
       <br>
       <table class="table table-bordered table-dark">
         <thead>
@@ -360,6 +416,8 @@
     </div>
 
     <div class="collapse" id="pcandlaptopsShow">
+      <br>
+      <%= link_to "Спарсить всё", parse_computers_all_999_path, class: "btn btn-success" %><br>
       <br>
       <table class="table table-bordered table-dark">
         <thead>
@@ -541,7 +599,160 @@
       </table>
     </div>
 
+    <div class="collapse" id="constructionrepairShow">
+      <br>
+      <%= link_to "Спарсить всё", construction_repair_all_parse_999_path, class: "btn btn-success" %><br>
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Строительство и ремонт / Отделочные и облицовочные материалы</th>
+          <td><%= @facing_materials_finishing_999 %></td>
+          <td><%= link_to "Парсинг", facing_materials_finishing_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Кровельные материалы</th>
+          <td><%= @roofing_materials_999 %></td>
+          <td><%= link_to "Парсинг", roofing_materials_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Изоляционные материалы</th>
+          <td><%= @insulating_materials_999 %></td>
+          <td><%= link_to "Парсинг", insulating_materials_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Пиломатериалы</th>
+          <td><%= @lumber_999 %></td>
+          <td><%= link_to "Парсинг", lumber_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Общестроительные материалы</th>
+          <td><%= @building_materials_999 %></td>
+          <td><%= link_to "Парсинг", building_materials_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Электрооборудование</th>
+          <td><%= @construction_electrical_999 %></td>
+          <td><%= link_to "Парсинг", construction_electrical_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>        <tr>
+          <th scope="row">Строительство и ремонт / Насосы и помпы</th>
+          <td><%= @construct_pumps_pump_999 %></td>
+          <td><%= link_to "Парсинг", construct_pumps_pump_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>        <tr>
+          <th scope="row">Строительство и ремонт / Строительная техника</th>
+          <td><%= @construction_equipment_999 %></td>
+          <td><%= link_to "Парсинг", construction_equipment_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Бензоинструменты</th>
+          <td><%= @construct_gas_powered_999 %></td>
+          <td><%= link_to "Парсинг", construct_gas_powered_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>        <tr>
+          <th scope="row">Строительство и ремонт / Освещение и комплектующие</th>
+          <td><%= @lighting_construction_999 %></td>
+          <td><%= link_to "Парсинг", lighting_construction_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>        <tr>
+          <th scope="row">Строительство и ремонт / Пневматическое оборудование</th>
+          <td><%= @construction_pneumatics_999 %></td>
+          <td><%= link_to "Парсинг", construction_pneumatics_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>        <tr>
+          <th scope="row">Строительство и ремонт / Ручной инструмент</th>
+          <td><%= @construct_hand_tool_999 %></td>
+          <td><%= link_to "Парсинг", construct_hand_tool_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>        <tr>
+          <th scope="row">Строительство и ремонт / Санфаянс, сантехника</th>
+          <td><%= @plumbing_bath_construct_999 %></td>
+          <td><%= link_to "Парсинг", plumbing_bath_construct_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>        <tr>
+          <th scope="row">Строительство и ремонт / Водопровод и канализация</th>
+          <td><%= @construct_pipes_999 %></td>
+          <td><%= link_to "Парсинг", construct_pipes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>        <tr>
+          <th scope="row">Строительство и ремонт / Кухонные мойки</th>
+          <td><%= @construct_sinks_999 %></td>
+          <td><%= link_to "Парсинг", construct_sinks_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Смесители</th>
+          <td><%= @taps_construct_999 %></td>
+          <td><%= link_to "Парсинг", taps_construct_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Разное</th>
+          <td><%= @construction_miscellaneous_999 %></td>
+          <td><%= link_to "Парсинг", construction_miscellaneous_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Изделия из металла</th>
+          <td><%= @construction_metal_999 %></td>
+          <td><%= link_to "Парсинг", construction_metal_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Изделия из железобетона</th>
+          <td><%= @construct_articles_of_concrete_999 %></td>
+          <td><%= link_to "Парсинг", construct_articles_of_concrete_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Конструкции из дерева</th>
+          <td><%= @construct_wood_999 %></td>
+          <td><%= link_to "Парсинг", construct_wood_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Изделия из стекла</th>
+          <td><%= @glass_construct_999 %></td>
+          <td><%= link_to "Парсинг", glass_construct_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Обогрев и отопление</th>
+          <td><%= @construct_heating_999 %></td>
+          <td><%= link_to "Парсинг", construct_heating_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Окна и двери</th>
+          <td><%= @construct_windows_doors_999 %></td>
+          <td><%= link_to "Парсинг", construct_windows_doors_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Ремонтные работы</th>
+          <td><%= @repairs_construct_999 %></td>
+          <td><%= link_to "Парсинг", repairs_construct_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Строительно-монтажные работы</th>
+          <td><%= @construction_work_999 %></td>
+          <td><%= link_to "Парсинг", construction_work_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Строительство и ремонт / Сантехнические работы</th>
+          <td><%= @plumbing_works_construct_999 %></td>
+          <td><%= link_to "Парсинг", plumbing_works_construct_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>        <tr>
+          <th scope="row">Строительство и ремонт / Электроработы</th>
+          <td><%= @electrical_work_construct_999 %></td>
+          <td><%= link_to "Парсинг", electrical_work_construct_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>        <tr>
+          <th scope="row">Строительство и ремонт / Архитектура, проектирование, дизайн</th>
+          <td><%= @design_and_architecture_construct_999 %></td>
+          <td><%= link_to "Парсинг", design_and_architecture_construct_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>        <tr>
+          <th scope="row">Строительство и ремонт / Металлообработка</th>
+          <td><%= @metal_work_construct_999 %></td>
+          <td><%= link_to "Парсинг", metal_work_construct_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
     <div class="collapse" id="clothesShow">
+      <br>
+      <%= link_to "Спарсить всё", parse_all_clothes_999_path, class: "btn btn-success" %><br>
       <br>
       <table class="table table-bordered table-dark">
         <thead>
@@ -562,12 +773,777 @@
           <td><%= @woman_shoes_999 %></td>
           <td><%= link_to "Парсинг", woman_shoes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
         </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Женское нижнее белье</th>
+          <td><%= @female_underwear_999 %></td>
+          <td><%= link_to "Парсинг", female_underwear_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Мужская одежда</th>
+          <td><%= @man_clothes_999 %></td>
+          <td><%= link_to "Парсинг", man_clothes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Мужская обувь</th>
+          <td><%= @man_shoes_999 %></td>
+          <td><%= link_to "Парсинг", man_shoes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Спортивная обувь</th>
+          <td><%= @sport_shoes_999 %></td>
+          <td><%= link_to "Парсинг", sport_shoes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Спортивная одежда</th>
+          <td><%= @sport_clothes_999 %></td>
+          <td><%= link_to "Парсинг", sport_clothes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Спортивное бельё, купальники</th>
+          <td><%= @thermal_underwear_999 %></td>
+          <td><%= link_to "Парсинг", thermal_underwear_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Свадебная одежда</th>
+          <td><%= @wedding_clothes_999 %></td>
+          <td><%= link_to "Парсинг", wedding_clothes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Свадебная обувь</th>
+          <td><%= @wedding_shoes_999 %></td>
+          <td><%= link_to "Парсинг", wedding_shoes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Свадебные аксессуары</th>
+          <td><%= @wedding_accessories_999 %></td>
+          <td><%= link_to "Парсинг", wedding_accessories_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Спецодежда и спецобувь</th>
+          <td><%= @special_clothing_999 %></td>
+          <td><%= link_to "Парсинг", special_clothing_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Карнавальные костюмы</th>
+          <td><%= @carnival_costumes_999 %></td>
+          <td><%= link_to "Парсинг", carnival_costumes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Разное</th>
+          <td><%= @clothes_miscellaneous_999 %></td>
+          <td><%= link_to "Парсинг", clothes_miscellaneous_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Детская одежда</th>
+          <td><%= @clothing_for_children_999 %></td>
+          <td><%= link_to "Парсинг", clothing_for_children_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Детская обувь</th>
+          <td><%= @childrens_shoes_999 %></td>
+          <td><%= link_to "Парсинг", childrens_shoes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Доставка одежды и обуви</th>
+          <td><%= @delivery_clothes_999 %></td>
+          <td><%= link_to "Парсинг", delivery_clothes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Уход и пошив одежды</th>
+          <td><%= @laundry_999 %></td>
+          <td><%= link_to "Парсинг", laundry_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Наручные часы</th>
+          <td><%= @watches_999 %></td>
+          <td><%= link_to "Парсинг", watches_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Ювелирные изделия, бижутерия</th>
+          <td><%= @jewelry_999 %></td>
+          <td><%= link_to "Парсинг", woman_clothes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Очки</th>
+          <td><%= @glasses_999 %></td>
+          <td><%= link_to "Парсинг", glasses_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Сумочки, портфели</th>
+          <td><%= @bags_briefcases_999 %></td>
+          <td><%= link_to "Парсинг", bags_briefcases_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Кошельки, ремни, перчатки</th>
+          <td><%= @belts_gloves_999 %></td>
+          <td><%= link_to "Парсинг", belts_gloves_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Галстуки, шарфы</th>
+          <td><%= @neckties_shawls_999 %></td>
+          <td><%= link_to "Парсинг", neckties_shawls_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Одежда, обувь и аксессуары / Головные уборы</th>
+          <td><%= @hats_999 %></td>
+          <td><%= link_to "Парсинг", hats_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
 
         </tbody>
       </table>
     </div>
 
+    <div class="collapse" id="furnitureShow">
+      <br>
+      <%= link_to "Спарсить всё", furniture_all_parse_999_path, class: "btn btn-success" %><br>
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Мебель и интерьер / Мягкая мебель</th>
+          <td><%= @upholstery_furniture_999 %></td>
+          <td><%= link_to "Парсинг", upholstery_furniture_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Мебель и интерьер / Спальни и кровати</th>
+          <td><%= @bedrooms_999 %></td>
+          <td><%= link_to "Парсинг", bedrooms_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Мебель и интерьер / Столы и стулья</th>
+          <td><%= @tables_chairs_stools_999 %></td>
+          <td><%= link_to "Парсинг", tables_chairs_stools_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Мебель и интерьер / Шкафы и стенки</th>
+          <td><%= @cabinets_cabinets_coupe_999 %></td>
+          <td><%= link_to "Парсинг", cabinets_cabinets_coupe_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Мебель и интерьер / Кухни</th>
+          <td><%= @kitchen_999 %></td>
+          <td><%= link_to "Парсинг", kitchen_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Мебель и интерьер / Антиквариат, коллекционирование</th>
+          <td><%= @antiques_999 %></td>
+          <td><%= link_to "Парсинг", antiques_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Мебель и интерьер / Дачная мебель</th>
+          <td><%= @outdoor_furniture_999 %></td>
+          <td><%= link_to "Парсинг", outdoor_furniture_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Мебель и интерьер / Мебель для кафе, баров и ресторанов</th>
+          <td><%= @furniture_for_horeca_999 %></td>
+          <td><%= link_to "Парсинг", furniture_for_horeca_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Мебель и интерьер / Надувная мебель</th>
+          <td><%= @inflatable_furniture_999 %></td>
+          <td><%= link_to "Парсинг", inflatable_furniture_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Мебель и интерьер / Изготовление и ремонт мебели</th>
+          <td><%= @custom_furniture_999 %></td>
+          <td><%= link_to "Парсинг", custom_furniture_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Мебель и интерьер / Картины, часы</th>
+          <td><%= @pictures_watches_interior_999 %></td>
+          <td><%= link_to "Парсинг", pictures_watches_interior_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Мебель и интерьер / Жалюзи и шторы</th>
+          <td><%= @blinds_curtains_999 %></td>
+          <td><%= link_to "Парсинг", blinds_curtains_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Мебель и интерьер / Зеркала</th>
+          <td><%= @home_mirrors_999 %></td>
+          <td><%= link_to "Парсинг", home_mirrors_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="collapse" id="autovideofotoShow">
+      <br>
+      <%= link_to "Спарсить всё", audio_video_photo_parse_all_999_path, class: "btn btn-success" %><br>
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Аудио-Видео-Фото / Телевизоры</th>
+          <td><%= @tv_999 %></td>
+          <td><%= link_to "Парсинг", tv_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Аудио-Видео-Фото / Видеокамеры</th>
+          <td><%= @video_camera_999 %></td>
+          <td><%= link_to "Парсинг", video_camera_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Аудио-Видео-Фото / Видеоплееры</th>
+          <td><%= @dvd_cd_players_999 %></td>
+          <td><%= link_to "Парсинг", dvd_cd_players_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Аудио-Видео-Фото / Спутниковые антенны</th>
+          <td><%= @satellite_dish_999 %></td>
+          <td><%= link_to "Парсинг", satellite_dish_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Аудио-Видео-Фото / Проекторы и экраны</th>
+          <td><%= @tv_projectors_999 %></td>
+          <td><%= link_to "Парсинг", tv_projectors_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Фотоаппараты</th>
+          <td><%= @digital_cameras_999 %></td>
+          <td><%= link_to "Парсинг", digital_cameras_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Объективы, светофильтры</th>
+          <td><%= @lenses_cvetofiltry_999 %></td>
+          <td><%= link_to "Парсинг", lenses_cvetofiltry_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Аксессуары фото</th>
+          <td><%= @accessories_photo_999 %></td>
+          <td><%= link_to "Парсинг", accessories_photo_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Вспышки, свет</th>
+          <td><%= @photo_flash_light_999 %></td>
+          <td><%= link_to "Парсинг", photo_flash_light_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Штативы, моноподы</th>
+          <td><%= @tripods_monopods_999 %></td>
+          <td><%= link_to "Парсинг", tripods_monopods_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Бинокли, телескопы, микроскопы</th>
+          <td><%= @binoculars_telescopes_microscopes_999 %></td>
+          <td><%= link_to "Парсинг", binoculars_telescopes_microscopes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Карты памяти</th>
+          <td><%= @photo_memory_cards_999 %></td>
+          <td><%= link_to "Парсинг", photo_memory_cards_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Сумки и чехлы</th>
+          <td><%= @photos_bags_cases_999 %></td>
+          <td><%= link_to "Парсинг", photos_bags_cases_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Аккумуляторы и зарядные устройства</th>
+          <td><%= @accums_photo_999 %></td>
+          <td><%= link_to "Парсинг", accums_photo_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Разное</th>
+          <td><%= @miscellaneous_audiovideophoto_999 %></td>
+          <td><%= link_to "Парсинг", miscellaneous_audiovideophoto_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Акустика, колонки</th>
+          <td><%= @acoustics_columns_999 %></td>
+          <td><%= link_to "Парсинг", acoustics_columns_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Микрофоны, наушники</th>
+          <td><%= @microphones_audiovideophoto_999 %></td>
+          <td><%= link_to "Парсинг", microphones_audiovideophoto_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Портативное аудио</th>
+          <td><%= @portable_audio_999 %></td>
+          <td><%= link_to "Парсинг", portable_audio_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Домашнее аудио</th>
+          <td><%= @home_audio_999 %></td>
+          <td><%= link_to "Парсинг", home_audio_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Стереокомпоненты</th>
+          <td><%= @stereo_components_999 %></td>
+          <td><%= link_to "Парсинг", stereo_components_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Домашние кинотеатры</th>
+          <td><%= @home_cinema_999 %></td>
+          <td><%= link_to "Парсинг", home_cinema_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Аксессуары аудио, видео</th>
+          <td><%= @accessories_video_999 %></td>
+          <td><%= link_to "Парсинг", accessories_video_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Студийное аудио</th>
+          <td><%= @audio_studio_999 %></td>
+          <td><%= link_to "Парсинг", audio_studio_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Студийный свет</th>
+          <td><%= @studio_lighting_999 %></td>
+          <td><%= link_to "Парсинг", studio_lighting_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Аксессуары студия</th>
+          <td><%= @accessories_studio_999 %></td>
+          <td><%= link_to "Парсинг", accessories_studio_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Студийное видео</th>
+          <td><%= @studio_video_999 %></td>
+          <td><%= link_to "Парсинг", studio_video_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Оцифровка, обработка</th>
+          <td><%= @digitization_999 %></td>
+          <td><%= link_to "Парсинг", digitization_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr><tr>
+          <th scope="row">Аудио-Видео-Фото / Ремонт и установка аудио-видео-фото</th>
+          <td><%= @audiovideophoto_repair_999 %></td>
+          <td><%= link_to "Парсинг", tv_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="collapse" id="allelseShow">
+      <br>
+      <%= link_to "Спарсить всё", all_else_parse_all_999_path, class: "btn btn-success" %><br>
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Все остальное / Профессиональное оборудование</th>
+          <td><%= @all_else_professional_equipment_999 %></td>
+          <td><%= link_to "Парсинг", all_else_professional_equipment_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все остальное / Промышленность и сырьё</th>
+          <td><%= @industry_raw_materials_999 %></td>
+          <td><%= link_to "Парсинг", industry_raw_materials_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все остальное / Охрана и безопасность</th>
+          <td><%= @security_safety_999 %></td>
+          <td><%= link_to "Парсинг", security_safety_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все остальное / Ломбард</th>
+          <td><%= @lombard_999 %></td>
+          <td><%= link_to "Парсинг", lombard_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все остальное / Handmade</th>
+          <td><%= @handmade_999 %></td>
+          <td><%= link_to "Парсинг", handmade_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все остальное / Продукты</th>
+          <td><%= @food_drinks_tobacco_999 %></td>
+          <td><%= link_to "Парсинг", food_drinks_tobacco_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все остальное / Рефераты и дипломные работы</th>
+          <td><%= @reports_dissertations_999 %></td>
+          <td><%= link_to "Парсинг", reports_dissertations_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все остальное / Интимные товары</th>
+          <td><%= @sex_shops_999 %></td>
+          <td><%= link_to "Парсинг", sex_shops_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все остальное / Книги и периодика</th>
+          <td><%= @books_periodicals_999 %></td>
+          <td><%= link_to "Парсинг", books_periodicals_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все остальное / Бюро переводов</th>
+          <td><%= @translation_999 %></td>
+          <td><%= link_to "Парсинг", translation_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все остальное / Бюро находок</th>
+          <td><%= @lost_found_999 %></td>
+          <td><%= link_to "Парсинг", lost_found_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все остальное / Всё для шитья</th>
+          <td><%= @sewing_999 %></td>
+          <td><%= link_to "Парсинг", sewing_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все остальное / Разное</th>
+          <td><%= @all_else_miscellaneous_999 %></td>
+          <td><%= link_to "Парсинг", all_else_miscellaneous_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="collapse" id="allforcelebrationsShow">
+      <br>
+      <%= link_to "Спарсить всё", allforcelebrations_parse_all_999_path, class: "btn btn-success" %><br>
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Все для торжеств / Подарки и сувениры</th>
+          <td><%= @little_touches_999 %></td>
+          <td><%= link_to "Парсинг", little_touches_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для торжеств / Любителям курения</th>
+          <td><%= @fans_of_smoking_999 %></td>
+          <td><%= link_to "Парсинг", fans_of_smoking_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для торжеств / Фейерверки, небесные фонарики</th>
+          <td><%= @fireworks_sky_lanterns_999 %></td>
+          <td><%= link_to "Парсинг", fireworks_sky_lanterns_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для торжеств / Алкоголь и напитки</th>
+          <td><%= @elite_alcohol_999 %></td>
+          <td><%= link_to "Парсинг", elite_alcohol_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для торжеств / Цветы, букеты</th>
+          <td><%= @flowers_999 %></td>
+          <td><%= link_to "Парсинг", flowers_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для торжеств / Фото-видео услуги</th>
+          <td><%= @photo_video_services_999 %></td>
+          <td><%= link_to "Парсинг", photo_video_services_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для торжеств / Артисты, музыканты и шоу-программы</th>
+          <td><%= @musicians_999 %></td>
+          <td><%= link_to "Парсинг", musicians_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для торжеств / Банкетные залы, обслуживание</th>
+          <td><%= @maintenance_celebrations_999 %></td>
+          <td><%= link_to "Парсинг", maintenance_celebrations_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для торжеств / Транспорт для торжеств</th>
+          <td><%= @transport_for_celebrations_999 %></td>
+          <td><%= link_to "Парсинг", transport_for_celebrations_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для торжеств / Кулинария</th>
+          <td><%= @cookery_999 %></td>
+          <td><%= link_to "Парсинг", cookery_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для торжеств / Разное</th>
+          <td><%= @allForCelebrations_miscellaneous_999 %></td>
+          <td><%= link_to "Парсинг", allForCelebrations_miscellaneous_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="collapse" id="household-appliances">
+      <br>
+      <%= link_to "Спарсить всё", household_appliances_parse_all_999_path, class: "btn btn-success" %><br>
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Бытовая техника / Стиральные машины</th>
+          <td><%= @washingMachines_999 %></td>
+          <td><%= link_to "Парсинг", washingMachines_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бытовая техника / Холодильники</th>
+          <td><%= @refrigerators_999 %></td>
+          <td><%= link_to "Парсинг", refrigerators_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бытовая техника / Газовые и электроплиты</th>
+          <td><%= @stove_oven_999 %></td>
+          <td><%= link_to "Парсинг", stove_oven_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бытовая техника / Микроволновые печи</th>
+          <td><%= @microwaves_999 %></td>
+          <td><%= link_to "Парсинг", microwaves_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бытовая техника / Посудомоечные машины</th>
+          <td><%= @dishwashers_999 %></td>
+          <td><%= link_to "Парсинг", dishwashers_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бытовая техника / Вытяжки</th>
+          <td><%= @hoods_999 %></td>
+          <td><%= link_to "Парсинг", hoods_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бытовая техника / Техника для кухни</th>
+          <td><%= @kitchen_appliances_999 %></td>
+          <td><%= link_to "Парсинг", kitchen_appliances_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бытовая техника / Техника для дома</th>
+          <td><%= @tehnika_dlya_doma_999 %></td>
+          <td><%= link_to "Парсинг", tehnika_dlya_doma_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бытовая техника / Индивидуальный уход</th>
+          <td><%= @personal_care_999 %></td>
+          <td><%= link_to "Парсинг", personal_care_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бытовая техника / Кондиционеры, вентиляция</th>
+          <td><%= @air_conditioners_999 %></td>
+          <td><%= link_to "Парсинг", air_conditioners_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бытовая техника / Водонагреватели, колонки</th>
+          <td><%= @boilersBoilers_999 %></td>
+          <td><%= link_to "Парсинг", boilersBoilers_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бытовая техника / Ионизаторы, климатизаторы</th>
+          <td><%= @air_cleaners_humidifiers_999 %></td>
+          <td><%= link_to "Парсинг", air_cleaners_humidifiers_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бытовая техника / Ремонт и установка бытовой техники</th>
+          <td><%= @appliance_repair_999 %></td>
+          <td><%= link_to "Парсинг", appliance_repair_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бытовая техника / Разное</th>
+          <td><%= @household_miscellaneous_999 %></td>
+          <td><%= link_to "Парсинг", household_miscellaneous_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="collapse" id="sports-health-and-beauty">
+      <br>
+      <%= link_to "Спарсить всё", sports_health_beauty_all_999_path, class: "btn btn-success" %><br>
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Спортивный инвентарь</th>
+          <td><%= @trainers_equipment_999 %></td>
+          <td><%= link_to "Парсинг", trainers_equipment_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Спортивное питание</th>
+          <td><%= @nutrition_999 %></td>
+          <td><%= link_to "Парсинг", nutrition_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Спортивные клубы и бассейны</th>
+          <td><%= @sports_clubs_999 %></td>
+          <td><%= link_to "Парсинг", sports_clubs_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Бассейны</th>
+          <td><%= @pools_999 %></td>
+          <td><%= link_to "Парсинг", pools_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Самокаты, ролики, лыжи</th>
+          <td><%= @scooters_skates_skis_999 %></td>
+          <td><%= link_to "Парсинг", scooters_skates_skis_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Медицинское оборудование</th>
+          <td><%= @medical_facilities_999 %></td>
+          <td><%= link_to "Парсинг", medical_facilities_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Лекарства, добавки, витамины</th>
+          <td><%= @drugs_medicines_999 %></td>
+          <td><%= link_to "Парсинг", drugs_medicines_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Лечебные масла, чаи, травы</th>
+          <td><%= @essential_oils_teas_herbs_999 %></td>
+          <td><%= link_to "Парсинг", essential_oils_teas_herbs_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Маникюр, педикюр</th>
+          <td><%= @nails_manicure_pedicure_999 %></td>
+          <td><%= link_to "Парсинг", nails_manicure_pedicure_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Косметология, макияж, тату</th>
+          <td><%= @beauty_makeup_999 %></td>
+          <td><%= link_to "Парсинг", beauty_makeup_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Парикмахерские услуги</th>
+          <td><%= @hair_care_999 %></td>
+          <td><%= link_to "Парсинг", hair_care_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Медицинские услуги</th>
+          <td><%= @traditional_medicine_999 %></td>
+          <td><%= link_to "Парсинг", traditional_medicine_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Парфюмерия</th>
+          <td><%= @perfumes_cosmetics_999 %></td>
+          <td><%= link_to "Парсинг", perfumes_cosmetics_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Косметика и уход</th>
+          <td><%= @care_beautry_999 %></td>
+          <td><%= link_to "Парсинг", care_beautry_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        <tr>
+          <th scope="row">Спорт, здоровье, красота / Разное</th>
+          <td><%= @sport_health_beauty_miscellaneous_999 %></td>
+          <td><%= link_to "Парсинг", sport_health_beauty_miscellaneous_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="collapse" id="tourism_leisureShow">
+      <br>
+      <%= link_to "Спарсить всё", tourism_leisure_parse_all_999_path, class: "btn btn-success" %><br>
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Туризм, отдых и развлечения / Туризм за рубежом</th>
+          <td><%= @holidays_abroad_999 %></td>
+          <td><%= link_to "Парсинг", holidays_abroad_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Туризм, отдых и развлечения / Внутренний туризм</th>
+          <td><%= @tourism_moldova_999 %></td>
+          <td><%= link_to "Парсинг", tourism_moldova_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Туризм, отдых и развлечения / Палатки</th>
+          <td><%= @tents_999 %></td>
+          <td><%= link_to "Парсинг", tents_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Туризм, отдых и развлечения / Товары для отдыха</th>
+          <td><%= @leisure_products_999 %></td>
+          <td><%= link_to "Парсинг", leisure_products_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Туризм, отдых и развлечения / Фонарики, фонари</th>
+          <td><%= @flashlights_999 %></td>
+          <td><%= link_to "Парсинг", flashlights_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Туризм, отдых и развлечения / Рюкзаки, сумки и чемоданы</th>
+          <td><%= @backpacks_bags_999 %></td>
+          <td><%= link_to "Парсинг", backpacks_bags_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Туризм, отдых и развлечения / Сауны и бани</th>
+          <td><%= @sauna_999 %></td>
+          <td><%= link_to "Парсинг", sauna_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Туризм, отдых и развлечения / Массажные салоны</th>
+          <td><%= @massage_999 %></td>
+          <td><%= link_to "Парсинг", massage_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Туризм, отдых и развлечения / Развлечения и отдых</th>
+          <td><%= @entertainment_recreation_999 %></td>
+          <td><%= link_to "Парсинг", entertainment_recreation_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Туризм, отдых и развлечения / Оружие и ножи</th>
+          <td><%= @guns_knives_999 %></td>
+          <td><%= link_to "Парсинг", guns_knives_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Туризм, отдых и развлечения / Удочки и снасти</th>
+          <td><%= @fishing_rods_tackles_999 %></td>
+          <td><%= link_to "Парсинг", fishing_rods_tackles_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Туризм, отдых и развлечения / Разное</th>
+          <td><%= @tourism_miscellaneous_999 %></td>
+          <td><%= link_to "Парсинг", tourism_miscellaneous_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
     <div class="collapse" id="businessShow">
+      <br>
+      <%= link_to "Спарсить всё", business_parse_all_999_path, class: "btn btn-success" %><br>
       <br>
       <table class="table table-bordered table-dark">
         <thead>
@@ -588,9 +1564,558 @@
           <td><%= @sites_and_developing_999 %></td>
           <td><%= link_to "Парсинг", sites_and_developing_999_path, class: "btn btn-sm btn-outline-warning" %></td>
         </tr>
+        <tr>
+          <th scope="row">Бизнес / Сотрудничество, инвестиции, дилеры</th>
+          <td><%= @doing_business_999 %></td>
+          <td><%= link_to "Парсинг", doing_business_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бизнес / Акции и доли</th>
+          <td><%= @shares_in_999 %></td>
+          <td><%= link_to "Парсинг", shares_in_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бизнес / Проведение тендеров и аукционов</th>
+          <td><%= @tenders_auctions_999 %></td>
+          <td><%= link_to "Парсинг", tenders_auctions_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бизнес / Разное</th>
+          <td><%= @miscellaneous_business_999 %></td>
+          <td><%= link_to "Парсинг", miscellaneous_business_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бизнес / Торговое оборудование</th>
+          <td><%= @cash_registers_scales_999 %></td>
+          <td><%= link_to "Парсинг", cash_registers_scales_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бизнес / Юридические услуги</th>
+          <td><%= @legal_services_999 %></td>
+          <td><%= link_to "Парсинг", legal_services_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бизнес / Рекламные услуги</th>
+          <td><%= @advertising_services_999 %></td>
+          <td><%= link_to "Парсинг", advertising_services_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бизнес / Кредитование и лизинг</th>
+          <td><%= @leasing_999 %></td>
+          <td><%= link_to "Парсинг", leasing_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бизнес / Полиграфия, дизайн</th>
+          <td><%= @printing_design_999 %></td>
+          <td><%= link_to "Парсинг", printing_design_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бизнес / Бухгалтерия и аудит</th>
+          <td><%= @accounting_audit_services_999 %></td>
+          <td><%= link_to "Парсинг", accounting_audit_services_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Бизнес / Страховые услуги и консалтинг</th>
+          <td><%= @insurance_services_consulting_999 %></td>
+          <td><%= link_to "Парсинг", insurance_services_consulting_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
         </tbody>
       </table>
     </div>
+
+    <div class="collapse" id="all-for-home-and-office">
+      <br>
+      <%= link_to "Спарсить всё", all_for_home_office_parse_all_999_path, class: "btn btn-success" %><br>
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Все для дома и офиса / Кухонные принадлежности, посуда</th>
+          <td><%= @cookware_dishes_999 %></td>
+          <td><%= link_to "Парсинг", cookware_dishes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для дома и офиса / Домашний текстиль и ковры</th>
+          <td><%= @fabrics_linen_999 %></td>
+          <td><%= link_to "Парсинг", fabrics_linen_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для дома и офиса / Хозяйственный инвентарь</th>
+          <td><%= @household_supplies_999 %></td>
+          <td><%= link_to "Парсинг", household_supplies_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для дома и офиса / Бытовая химия</th>
+          <td><%= @household_chemistry_999 %></td>
+          <td><%= link_to "Парсинг", household_chemistry_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для дома и офиса / Аксессуары для ванны и туалета</th>
+          <td><%= @accessories_toilet_999 %></td>
+          <td><%= link_to "Парсинг", accessories_toilet_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для дома и офиса / Канцелярские товары</th>
+          <td><%= @stationary_999 %></td>
+          <td><%= link_to "Парсинг", stationary_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для дома и офиса / Сейфы, несгораемые шкафы</th>
+          <td><%= @safes_fireproof_cabinets_999 %></td>
+          <td><%= link_to "Парсинг", safes_fireproof_cabinets_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для дома и офиса / Презентационный инвентарь</th>
+          <td><%= @presentation_equipment_999 %></td>
+          <td><%= link_to "Парсинг", presentation_equipment_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для дома и офиса / Разное</th>
+          <td><%= @miscellaneous_allforhomeoffice_999 %></td>
+          <td><%= link_to "Парсинг", miscellaneous_allforhomeoffice_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Все для дома и офиса / Клининговые услуги</th>
+          <td><%= @cleaning_services_999 %></td>
+          <td><%= link_to "Парсинг", cookware_dishes_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="collapse" id="children-world">
+      <br>
+      <%= link_to "Спарсить всё", children_world_parse_all_999_path, class: "btn btn-success" %><br>
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Детский мир / Коляски</th>
+          <td><%= @stroller_999 %></td>
+          <td><%= link_to "Парсинг", stroller_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Детский мир / Игрушки и развлечения</th>
+          <td><%= @toys_999 %></td>
+          <td><%= link_to "Парсинг", toys_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Детский мир / Мебель для детей</th>
+          <td><%= @furniture_children_999 %></td>
+          <td><%= link_to "Парсинг", furniture_children_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Детский мир / Ходунки, слинги и манежи</th>
+          <td><%= @walkers_slings_cots_999 %></td>
+          <td><%= link_to "Парсинг", walkers_slings_cots_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Детский мир / Предметы ухода и гигиены</th>
+          <td><%= @care_hygiene_children_999 %></td>
+          <td><%= link_to "Парсинг", care_hygiene_children_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Детский мир / Детские автокресла</th>
+          <td><%= @car_chair_children_999 %></td>
+          <td><%= link_to "Парсинг", car_chair_children_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Детский мир / Питание и аксессуары для питания</th>
+          <td><%= @power_accessories_food_children_999 %></td>
+          <td><%= link_to "Парсинг", power_accessories_food_children_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Детский мир / Разное</th>
+          <td><%= @children_miscellaneous_999 %></td>
+          <td><%= link_to "Парсинг", children_miscellaneous_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Детский мир / Образование и няни</th>
+          <td><%= @education_child_care_999 %></td>
+          <td><%= link_to "Парсинг", education_child_care_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="collapse" id="agriculture">
+      <br>
+      <%= link_to "Спарсить всё", agriculture_parse_all_999_path, class: "btn btn-success" %><br>
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Сельское хозяйство / Животноводство</th>
+          <td><%= @livestock_999 %></td>
+          <td><%= link_to "Парсинг", livestock_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Птицеводство</th>
+          <td><%= @aviculture_999 %></td>
+          <td><%= link_to "Парсинг", aviculture_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Пчеловодство и мед</th>
+          <td><%= @beekeeping_honey_999 %></td>
+          <td><%= link_to "Парсинг", beekeeping_honey_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Корма для животных</th>
+          <td><%= @animal_feed_999 %></td>
+          <td><%= link_to "Парсинг", animal_feed_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Рыбоводство</th>
+          <td><%= @pisciculture_999 %></td>
+          <td><%= link_to "Парсинг", pisciculture_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Удобрения и химикаты</th>
+          <td><%= @fertilizers_chemicals_999 %></td>
+          <td><%= link_to "Парсинг", fertilizers_chemicals_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Семена, рассада, саженцы</th>
+          <td><%= @seeds_seedlings_999 %></td>
+          <td><%= link_to "Парсинг", seeds_seedlings_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Оборудование</th>
+          <td><%= @farm_equipment_999 %></td>
+          <td><%= link_to "Парсинг", farm_equipment_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Дрова, уголь, горючее</th>
+          <td><%= @wood_coal_fuel_999 %></td>
+          <td><%= link_to "Парсинг", wood_coal_fuel_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Инструменты</th>
+          <td><%= @agro_tools_999 %></td>
+          <td><%= link_to "Парсинг", agro_tools_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Разное</th>
+          <td><%= @agro_other_999 %></td>
+          <td><%= link_to "Парсинг", agro_other_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Ягоды и грибы</th>
+          <td><%= @berries_mushrooms_999 %></td>
+          <td><%= link_to "Парсинг", berries_mushrooms_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Сухофрукты</th>
+          <td><%= @dried_fruits_999 %></td>
+          <td><%= link_to "Парсинг", dried_fruits_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Овощи и Фрукты</th>
+          <td><%= @vegetables_fruits_999 %></td>
+          <td><%= link_to "Парсинг", vegetables_fruits_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Молочная продукция</th>
+          <td><%= @dairy_products_999 %></td>
+          <td><%= link_to "Парсинг", dairy_products_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Зерно, крупы, мука</th>
+          <td><%= @grain_cereals_flours_999 %></td>
+          <td><%= link_to "Парсинг", grain_cereals_flours_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Масло</th>
+          <td><%= @agro_oil_999 %></td>
+          <td><%= link_to "Парсинг", agro_oil_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Орехи, подсолнух</th>
+          <td><%= @nuts_999 %></td>
+          <td><%= link_to "Парсинг", nuts_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Яйца</th>
+          <td><%= @eggs_999 %></td>
+          <td><%= link_to "Парсинг", eggs_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Мясо, птица, рыба</th>
+          <td><%= @meat_bird_fish_999 %></td>
+          <td><%= link_to "Парсинг", meat_bird_fish_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Сельское хозяйство / Сельхоз Услуги</th>
+          <td><%= @agro_services_999 %></td>
+          <td><%= link_to "Парсинг", agro_services_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="collapse" id="animals-and-plants">
+      <br>
+      <%= link_to "Спарсить всё", animals_plants_parse_all_999_path, class: "btn btn-success" %><br>
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Питомцы и растения / Собаки</th>
+          <td><%= @dogs_999 %></td>
+          <td><%= link_to "Парсинг", dogs_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Питомцы и растения / Кошки</th>
+          <td><%= @cats_999 %></td>
+          <td><%= link_to "Парсинг", cats_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Питомцы и растения / Птицы</th>
+          <td><%= @the_birds_999 %></td>
+          <td><%= link_to "Парсинг", the_birds_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Питомцы и растения / Аквариумистика</th>
+          <td><%= @fish_999 %></td>
+          <td><%= link_to "Парсинг", fish_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Питомцы и растения / Другие животные</th>
+          <td><%= @other_animals_999 %></td>
+          <td><%= link_to "Парсинг", other_animals_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Питомцы и растения / Зоотовары</th>
+          <td><%= @accessories_for_animals_999 %></td>
+          <td><%= link_to "Парсинг", accessories_for_animals_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Питомцы и растения / Поиск питомцев</th>
+          <td><%= @animals_missing_999 %></td>
+          <td><%= link_to "Парсинг", animals_missing_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Питомцы и растения / Вязка</th>
+          <td><%= @tying_animals_999 %></td>
+          <td><%= link_to "Парсинг", tying_animals_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Питомцы и растения / Услуги питомцам</th>
+          <td><%= @care_animals_999 %></td>
+          <td><%= link_to "Парсинг", care_animals_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Питомцы и растения / Растения</th>
+          <td><%= @plants_flowers_999 %></td>
+          <td><%= link_to "Парсинг", plants_flowers_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Питомцы и растения / Товары для растений</th>
+          <td><%= @inventory_plants_999 %></td>
+          <td><%= link_to "Парсинг", inventory_plants_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Питомцы и растения / Разное</th>
+          <td><%= @miscellaneous_animals_plants_999 %></td>
+          <td><%= link_to "Парсинг", miscellaneous_animals_plants_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="collapse" id="musical-instruments">
+      <br>
+      <%= link_to "Спарсить всё", music_instruments_parse_all_999_path, class: "btn btn-success" %><br>
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Гитары</th>
+          <td><%= @guitars_999 %></td>
+          <td><%= link_to "Парсинг", guitars_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Гитарные аксессуары</th>
+          <td><%= @guitar_effects_999 %></td>
+          <td><%= link_to "Парсинг", guitar_effects_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Клавишные</th>
+          <td><%= @keyboard_instruments_999 %></td>
+          <td><%= link_to "Парсинг", keyboard_instruments_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Аккордеоны и баяны</th>
+          <td><%= @accordions_999 %></td>
+          <td><%= link_to "Парсинг", accordions_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Струнные</th>
+          <td><%= @strings_999 %></td>
+          <td><%= link_to "Парсинг", strings_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Духовые</th>
+          <td><%= @winds_999 %></td>
+          <td><%= link_to "Парсинг", winds_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Ударные</th>
+          <td><%= @percussion_999 %></td>
+          <td><%= link_to "Парсинг", percussion_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Колонки и акустика</th>
+          <td><%= @speakers_acoustics_999 %></td>
+          <td><%= link_to "Парсинг", speakers_acoustics_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Микшеры</th>
+          <td><%= @audio_mixers_999 %></td>
+          <td><%= link_to "Парсинг", audio_mixers_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Усилители</th>
+          <td><%= @amplifiers_999 %></td>
+          <td><%= link_to "Парсинг", amplifiers_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Сценическое оборудование</th>
+          <td><%= @stage_equipment_999 %></td>
+          <td><%= link_to "Парсинг", stage_equipment_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / DJ оборудование</th>
+          <td><%= @dj_equipment_999 %></td>
+          <td><%= link_to "Парсинг", dj_equipment_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Аксессуары и комплектующие</th>
+          <td><%= @accessories_components_999 %></td>
+          <td><%= link_to "Парсинг", accessories_components_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Стойки, рамы и стулья</th>
+          <td><%= @racks_frames_chairs_999 %></td>
+          <td><%= link_to "Парсинг", racks_frames_chairs_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Кейсы и чехлы</th>
+          <td><%= @cases_music_999 %></td>
+          <td><%= link_to "Парсинг", cases_music_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Ремонт и настройка музыкальных инструментов</th>
+          <td><%= @repair_music_999 %></td>
+          <td><%= link_to "Парсинг", repair_music_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Обучение</th>
+          <td><%= @learning_music_999 %></td>
+          <td><%= link_to "Парсинг", learning_music_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Запись и сведение</th>
+          <td><%= @recording_mixing_999 %></td>
+          <td><%= link_to "Парсинг", recording_mixing_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Прокат</th>
+          <td><%= @rent_music_999 %></td>
+          <td><%= link_to "Парсинг", rent_music_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        <tr>
+          <th scope="row">Музыкальные инструменты / Разное</th>
+          <td><%= @miscellaneous_music_999 %></td>
+          <td><%= link_to "Парсинг", miscellaneous_music_999_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+<br><br>
+
+  <div class="text-center">
+    <%= image_pack_tag 'yellowpages.png', size: "376x169" %>
+  </div>
+  <div class="text-center">
+    <h3>yellowpages.md</h3>
+    <p>Всего с данного сайта: <%= @yellowPages %></p>
+  </div>
+
+  <div class="text-center">
+
+    <a class="btn btn-outline-dark btn-sm" data-toggle="collapse" href="#companiesYPShow" role="button" aria-expanded="false" aria-controls="companiesYPShow">
+      Юридические лица
+    </a>
+
+    <div class="collapse" id="companiesYPShow">
+      <br>
+      <table class="table table-bordered table-dark">
+        <thead>
+        <tr>
+          <th scope="col">Категория</th>
+          <th scope="col">Номеров в базе</th>
+          <th scope="col">Действие</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">Юридические лица</th>
+          <td><%= @yellowPages %></td>
+          <td><%= link_to "Парсинг", parse_companies_ypmd_path, class: "btn btn-sm btn-outline-warning" %></td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <br><br>
+    <div class="text-center">
+      <h3>Фитнес Клуб</h3>
+      <p>Всего: <%= @fitness %></p>
+    </div>
+
+    <br><br>
+    <div class="text-center">
+      <h3>Туристическое агенство</h3>
+      <p>Всего: <%= @tour_agency %></p>
+    </div>
+
 
 
   </div>

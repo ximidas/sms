@@ -12,7 +12,7 @@
     <tbody>
     <% @deposits.each do |deposit| %><tr>
       <th scope="row"><%= deposit.summ %></th>
-      <td><%= deposit.created_at %></td>
+      <td><%= deposit.created_at.strftime("%-d.%-m.%Y %H:%M:%S") %></td>
     </tr><% end %>
     </tbody>
   </table>

@@ -3,11 +3,11 @@ class SimCardsController < ApplicationController
   def add_card
 
     if params[:number].empty? || params[:sms_available].empty? || params[:price].empty? || params[:operator].empty?
-      redirect_to sim_cards_path, notice: "Не все параметры указаны"
+      redirect_to sim_cards_url, notice: "Не все параметры указаны"
     else
       @sim_card = SimCard.new
       @sim_card.update(number: params[:number], sms_available: params[:sms_available], price: params[:price], sms_cost: params[:sms_cost], operator: params[:operator])
-      redirect_to sim_cards_path, notice: "Сим карта добавлена!"
+      redirect_to sim_cards_url, notice: "Сим карта добавлена!"
     end
   end
 
