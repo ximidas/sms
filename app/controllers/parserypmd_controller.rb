@@ -1,10 +1,8 @@
 class ParserypmdController < ApplicationController
-
   require 'open-uri'
   require 'webdrivers'
 
   def parser
-
     @page = 'http://www.yellowpages.md/rus/list?page='
 
     @start_page = 1
@@ -15,7 +13,6 @@ class ParserypmdController < ApplicationController
     @browser = Watir::Browser.new :firefox, headless: false
 
     begin
-
       @browser.goto(@page + @start_page.to_s)
 
       @promote_block = @browser.divs(class: %w[node node-company node--company--search_index promote])
@@ -113,24 +110,16 @@ class ParserypmdController < ApplicationController
           end
 
           @number_exist_yp = Number.where(phone: @phone_number, site: @site)
-
           unless @number_exist_yp.exists?
             @number = Number.new
             @number.update(phone: @phone_number, name: @company_name, region: @region, site: @site, category: 'Юридические лица', country: 'Молдова')
           end
-
         end
-
       end
 
       @start_page += 1
-
       puts "Парсинг страницы #{@start_page} завершен"
-
     end until @start_page > @end_page
-
-
-
   end
 
 end

@@ -420,4 +420,6 @@ Rails.application.routes.draw do
   get 'doza_import', to: 'csv#doza_import'
   get 'ghidtur_import', to: 'csv#ghidtur_import'
 
+  get 'import', to: 'csv#import'
+
 end

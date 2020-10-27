@@ -1756,8 +1756,7 @@ class Parser999mdController < ApplicationController
           if @number_exist == false
             @region = @phone_page.xpath('//dl[@class="adPage__content__region grid_18"]/dd[2]').to_s
             @region = @region.gsub(' мун.', '')
-            @region = @region.gsub('<dd>, ', '')
-            @region = @region.gsub('</dd>', '')
+            @region = string_between_markers(@region, 'ss"> , ', ' <meta i')
             @store_number = Number.new
             @store_number.update(phone: @number, category: category, region: @region, country: @country, site: @site) unless @number.nil?
           end
@@ -1774,6 +1773,10 @@ class Parser999mdController < ApplicationController
       puts 'HTTP error'
     end until @start_page > @end_page
 
+  end
+
+  def string_between_markers(string, marker1, marker2)
+    string[/#{Regexp.escape(marker1)}(.*?)#{Regexp.escape(marker2)}/m, 1]
   end
 
 end

@@ -1,24 +1,35 @@
-# README
+## SMS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```bash
+$ sudo apt-get install build-essential patch ruby-dev zlib1g-dev liblzma-dev
+```
 
-Things you may want to cover:
+```bash
+$ sudo apt install postgresql-contrib libpq-dev
+```
 
-* Ruby version
+```bash
+$ bundle install
+```
 
-* System dependencies
+```bash
+$ rake db:create
+```
 
-* Configuration
+```bash
+$ rake db:migrate
+```
 
-* Database creation
+Если не установился гем ruby-gsm
+```bash
+$ bundle install --path vendor/bundle
+```
 
-* Database initialization
+Перед отправкой смс:
+```bash
+sudo chmod 777 /dev/ttyUSB2 <-- или другой номер
+```
 
-* How to run the test suite
+Иначе будет ошибка: ``Permission denied - /dev/ttyUSB2 ``
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
